@@ -16,5 +16,9 @@ namespace xTwitter_collector
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
