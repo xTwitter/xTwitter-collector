@@ -12,8 +12,9 @@ namespace xTwitter_collector
         public TwitterContext twitterContext;
         public SingleUserAuthorizer auth;
 
-        public void InitAuth(ApiToken token) { 
-            if( twitterContext != null )
+        public void InitAuth(ApiToken token)
+        {
+            if (twitterContext != null)
             {
                 twitterContext.Dispose();
             }
@@ -34,7 +35,7 @@ namespace xTwitter_collector
         public Boolean IsAuthorized()
         {
             // 추후에 더 확인하는 조건 추가 예정
-            if( twitterContext != null )
+            if (twitterContext != null)
             {
                 return true;
             }
@@ -43,16 +44,17 @@ namespace xTwitter_collector
 
         public async Task<List<Tweet>> ReadTimeline(User user)
         {
-            return await(from tweet in twitterContext.Status
-                               where tweet.Type == StatusType.Home
-                               select new Tweet()
-                               {
-                                   text = tweet.Text,
-                                   agent = tweet.Source,
-                                   favorite_count = tweet.FavoriteCount,
-                                   retweet_count = tweet.RetweetCount,
-                                   created_at = BitConverter.GetBytes(tweet.CreatedAt.Ticks)
-                               }).ToListAsync();
+            return await (from tweet in twitterContext.Status
+                          where tweet.Type == StatusType.User
+                                && tweet.ScreenName == user.screen_name
+                          select new Tweet()
+                          {
+                              text = tweet.Text,
+                              source = tweet.Source,
+                              favorite_count = tweet.FavoriteCount,
+                              retweet_count = tweet.RetweetCount,
+                              created_at = tweet.CreatedAt
+                          }).ToListAsync();
         }
     }
 }
