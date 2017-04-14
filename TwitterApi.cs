@@ -49,7 +49,7 @@ namespace xTwitter_collector
                                 && tweet.ScreenName == user.screen_name
                           select new Tweet()
                           {
-                              id = tweet.ID,
+                              id = tweet.StatusID,
                               text = tweet.Text,
                               source = tweet.Source,
                               favorite_count = tweet.FavoriteCount,
