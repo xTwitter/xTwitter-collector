@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace xTwitter_collector
@@ -18,11 +12,7 @@ namespace xTwitter_collector
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
+        
         private void btnDbConnectionTest_Click(object sender, EventArgs e)
         {
             try
@@ -109,6 +99,7 @@ namespace xTwitter_collector
         {
             lvTimelineTest.Items.Clear();
             ApiToken token = kd.ReadApiToken()[0];
+            /*
             TwitterApi api = new TwitterApi();
             api.InitAuth(token);
             User user = new User();
@@ -117,6 +108,7 @@ namespace xTwitter_collector
                 //ListViewItem item = new ListViewItem(new string[] {tweet.text, tweet.retweet_count });
                 // TODO : 트윗받아온거 타임라인 listview에 반영하기..
             }
+            */
         }
     }
 }
