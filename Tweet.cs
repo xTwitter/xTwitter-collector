@@ -16,10 +16,9 @@ namespace xTwitter_collector
             Relation1 = new HashSet<Relation>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long id { get; set; }
+        public decimal id { get; set; }
 
-        public long? user_id { get; set; }
+        public decimal? user_id { get; set; }
 
         [Column(TypeName = "text")]
         public string text { get; set; }

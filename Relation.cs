@@ -9,18 +9,17 @@ namespace xTwitter_collector
     [Table("Relation")]
     public partial class Relation
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long id { get; set; }
+        public decimal id { get; set; }
 
-        public long? user_id { get; set; }
+        public decimal? user_id { get; set; }
 
-        public long? mentioned_user_id { get; set; }
+        public decimal? mentioned_user_id { get; set; }
 
-        public long? tweet_id { get; set; }
+        public decimal? tweet_id { get; set; }
 
-        public long? retweeted_tweet_id { get; set; }
+        public decimal? retweeted_tweet_id { get; set; }
 
-        public long? followed_user_id { get; set; }
+        public decimal? followed_user_id { get; set; }
 
         public int? type { get; set; }
 

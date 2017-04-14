@@ -9,8 +9,7 @@ namespace xTwitter_collector
     [Table("TaskQueue")]
     public partial class TaskQueue
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long id { get; set; }
+        public decimal id { get; set; }
 
         public int? type { get; set; }
     }

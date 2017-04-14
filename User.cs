@@ -18,8 +18,7 @@ namespace xTwitter_collector
             Tweet = new HashSet<Tweet>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long id { get; set; }
+        public decimal id { get; set; }
 
         [Column(TypeName = "text")]
         public string name { get; set; }
@@ -38,8 +37,7 @@ namespace xTwitter_collector
 
         public long? tweet_count { get; set; }
 
-        [Column(TypeName = "text")]
-        public string created_at { get; set; }
+        public DateTime? created_at { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Relation> Relation { get; set; }

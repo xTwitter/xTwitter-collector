@@ -41,9 +41,45 @@ namespace xTwitter_collector
                 .Property(e => e.access_token_secret)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Relation>()
+                .Property(e => e.id)
+                .HasPrecision(20, 0);
+
+            modelBuilder.Entity<Relation>()
+                .Property(e => e.user_id)
+                .HasPrecision(20, 0);
+
+            modelBuilder.Entity<Relation>()
+                .Property(e => e.mentioned_user_id)
+                .HasPrecision(20, 0);
+
+            modelBuilder.Entity<Relation>()
+                .Property(e => e.tweet_id)
+                .HasPrecision(20, 0);
+
+            modelBuilder.Entity<Relation>()
+                .Property(e => e.retweeted_tweet_id)
+                .HasPrecision(20, 0);
+
+            modelBuilder.Entity<Relation>()
+                .Property(e => e.followed_user_id)
+                .HasPrecision(20, 0);
+
+            modelBuilder.Entity<TaskQueue>()
+                .Property(e => e.id)
+                .HasPrecision(20, 0);
+
             modelBuilder.Entity<test>()
                 .Property(e => e.name)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Tweet>()
+                .Property(e => e.id)
+                .HasPrecision(20, 0);
+
+            modelBuilder.Entity<Tweet>()
+                .Property(e => e.user_id)
+                .HasPrecision(20, 0);
 
             modelBuilder.Entity<Tweet>()
                 .Property(e => e.text)
@@ -68,6 +104,10 @@ namespace xTwitter_collector
                 .HasForeignKey(e => e.tweet_id);
 
             modelBuilder.Entity<User>()
+                .Property(e => e.id)
+                .HasPrecision(20, 0);
+
+            modelBuilder.Entity<User>()
                 .Property(e => e.name)
                 .IsUnicode(false);
 
@@ -77,10 +117,6 @@ namespace xTwitter_collector
 
             modelBuilder.Entity<User>()
                 .Property(e => e.description)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .Property(e => e.created_at)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
