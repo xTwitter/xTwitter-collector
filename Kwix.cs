@@ -8,10 +8,11 @@ namespace xTwitter_collector
     public partial class Kwix : DbContext
     {
         public Kwix()
-            : base("name=Kwix1")
+            : base("name=Kwix")
         {
         }
 
+        public virtual DbSet<ApiToken> ApiToken { get; set; }
         public virtual DbSet<Relation> Relation { get; set; }
         public virtual DbSet<test> test { get; set; }
         public virtual DbSet<Tweet> Tweet { get; set; }
@@ -19,6 +20,26 @@ namespace xTwitter_collector
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ApiToken>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ApiToken>()
+                .Property(e => e.consumer_key)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ApiToken>()
+                .Property(e => e.consumer_secret)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ApiToken>()
+                .Property(e => e.access_token)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ApiToken>()
+                .Property(e => e.access_token_secret)
+                .IsUnicode(false);
+
             modelBuilder.Entity<test>()
                 .Property(e => e.name)
                 .IsUnicode(false);
