@@ -42,5 +42,48 @@ namespace xTwitter_collector
             db.Database.Connection.Open();
             db.Database.Initialize(false);
         }
+
+        public Boolean IsConnected()
+        {
+            if (db != null
+                && (db.Database.Connection.State == System.Data.ConnectionState.Connecting
+                    || db.Database.Connection.State == System.Data.ConnectionState.Executing
+                    || db.Database.Connection.State == System.Data.ConnectionState.Fetching
+                    || db.Database.Connection.State == System.Data.ConnectionState.Open))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public List<ApiToken> ReadApiToken()
+        {
+            if (!IsConnected())
+            {
+                throw new Exception("database not connected yet");
+            }
+
+            return db.ApiToken.ToList();
+        }
+
+        public void CreateApiToken(ApiToken token)
+        {
+            if (!IsConnected())
+            {
+                throw new Exception("database not connected yet");
+            }
+            try
+            {
+                db.ApiToken.Add(token);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
