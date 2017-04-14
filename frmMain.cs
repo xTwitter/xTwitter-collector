@@ -36,6 +36,9 @@ namespace xTwitter_collector
                     name = $"from xTwitter-collector at {DateTime.UtcNow.Ticks}"
                 });
                 kd.db.SaveChanges();
+                // 성공했으면 버튼하고 텍스트박스 비활성화
+                tbDbPassword.Enabled = false;
+                btnDbConnectionTest.Enabled = false;
             }
             catch (Exception ex)
             {
