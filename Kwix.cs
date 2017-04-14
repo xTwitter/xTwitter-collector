@@ -49,12 +49,8 @@ namespace xTwitter_collector
                 .IsUnicode(false);
 
             modelBuilder.Entity<Tweet>()
-                .Property(e => e.agent)
+                .Property(e => e.source)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Tweet>()
-                .Property(e => e.created_at)
-                .IsFixedLength();
 
             modelBuilder.Entity<Tweet>()
                 .Property(e => e.media_info)
@@ -75,7 +71,7 @@ namespace xTwitter_collector
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .Property(e => e.nick)
+                .Property(e => e.screen_name)
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()

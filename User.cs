@@ -25,7 +25,7 @@ namespace xTwitter_collector
         public string name { get; set; }
 
         [Column(TypeName = "text")]
-        public string nick { get; set; }
+        public string screen_name { get; set; }
 
         [Column(TypeName = "text")]
         public string description { get; set; }

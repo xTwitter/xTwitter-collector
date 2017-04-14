@@ -25,12 +25,9 @@ namespace xTwitter_collector
         public string text { get; set; }
 
         [Column(TypeName = "text")]
-        public string agent { get; set; }
+        public string source { get; set; }
 
-        [Column(TypeName = "timestamp")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [MaxLength(8)]
-        public byte[] created_at { get; set; }
+        public DateTime? created_at { get; set; }
 
         [Column(TypeName = "text")]
         public string media_info { get; set; }
