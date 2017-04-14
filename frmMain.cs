@@ -29,6 +29,8 @@ namespace xTwitter_collector
                 // 성공했으면 버튼하고 텍스트박스 비활성화
                 tbDbPassword.Enabled = false;
                 btnDbConnectionTest.Enabled = false;
+                // form caption도 바꿈
+                this.Text = "xTwitter Collector(Connected)";
                 // api token listview에 gui update
                 SyncApiTokenListView();
             }
@@ -109,9 +111,38 @@ namespace xTwitter_collector
             
             foreach (Tweet tweet in await api.ReadTimeline(user))
             {
-                ListViewItem item = new ListViewItem(new string[] {tweet.text, tweet.retweet_count.ToString(), tweet.favorite_count.ToString() });
+                ListViewItem item = new ListViewItem(new string[] {
+                    tweet.id.ToString(),
+                    tweet.text,
+                    tweet.retweet_count.ToString(),
+                    tweet.favorite_count.ToString()
+                });
                 lvTimelineTest.Items.Add(item);
             }
+        }
+
+        private void 삭제ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            // 이름 그지같은거 나중에 알아서 ...^^;; 난안해
+            if (lvApiToken.SelectedIndices.Count > 0)
+            {
+                int idx = lvApiToken.SelectedIndices[0];
+                lvApiToken.Items.RemoveAt(idx);
+                // db에 반영 
+                // TODO : 오류처리 필요함
+                kd.DeleteApiToken(idx);
+            }
+            
+        }
+
+        private void 삭제ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SyncApiTokenListView();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

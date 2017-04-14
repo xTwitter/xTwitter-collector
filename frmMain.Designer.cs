@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox_DBConnection = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.btnDbConnectionTest = new System.Windows.Forms.Button();
@@ -61,8 +62,13 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabQueue = new System.Windows.Forms.TabPage();
             this.tabStatus = new System.Windows.Forms.TabPage();
-            this.tbDbPassword = new System.Windows.Forms.TextBox();
             this.tbTimelineTestUserScreenName = new System.Windows.Forms.TextBox();
+            this.tbDbPassword = new System.Windows.Forms.TextBox();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripLvApiToken = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.삭제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.삭제ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox_DBConnection.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.groupBox_APIToken.SuspendLayout();
@@ -73,6 +79,7 @@
             this.tabApiToken.SuspendLayout();
             this.tabCollectTest.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.contextMenuStripLvApiToken.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_DBConnection
@@ -206,6 +213,7 @@
             this.columnHeader4,
             this.columnHeader5});
             this.tableLayoutPanel_APIToken.SetColumnSpan(this.lvApiToken, 5);
+            this.lvApiToken.ContextMenuStrip = this.contextMenuStripLvApiToken;
             this.lvApiToken.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvApiToken.FullRowSelect = true;
             this.lvApiToken.GridLines = true;
@@ -346,6 +354,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.tbTimelineTestUserScreenName);
             this.groupBox3.Controls.Add(this.btnTimelineTest);
             this.groupBox3.Controls.Add(this.lvTimelineTest);
@@ -359,7 +368,7 @@
             // 
             // btnTimelineTest
             // 
-            this.btnTimelineTest.Location = new System.Drawing.Point(511, 492);
+            this.btnTimelineTest.Location = new System.Drawing.Point(218, 198);
             this.btnTimelineTest.Name = "btnTimelineTest";
             this.btnTimelineTest.Size = new System.Drawing.Size(75, 23);
             this.btnTimelineTest.TabIndex = 2;
@@ -370,6 +379,7 @@
             // lvTimelineTest
             // 
             this.lvTimelineTest.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
@@ -377,7 +387,7 @@
             this.lvTimelineTest.GridLines = true;
             this.lvTimelineTest.Location = new System.Drawing.Point(3, 18);
             this.lvTimelineTest.Name = "lvTimelineTest";
-            this.lvTimelineTest.Size = new System.Drawing.Size(767, 468);
+            this.lvTimelineTest.Size = new System.Drawing.Size(767, 175);
             this.lvTimelineTest.TabIndex = 0;
             this.lvTimelineTest.UseCompatibleStateImageBehavior = false;
             this.lvTimelineTest.View = System.Windows.Forms.View.Details;
@@ -415,6 +425,13 @@
             this.tabStatus.Text = "Status";
             this.tabStatus.UseVisualStyleBackColor = true;
             // 
+            // tbTimelineTestUserScreenName
+            // 
+            this.tbTimelineTestUserScreenName.Location = new System.Drawing.Point(6, 199);
+            this.tbTimelineTestUserScreenName.Name = "tbTimelineTestUserScreenName";
+            this.tbTimelineTestUserScreenName.Size = new System.Drawing.Size(206, 23);
+            this.tbTimelineTestUserScreenName.TabIndex = 4;
+            // 
             // tbDbPassword
             // 
             this.tbDbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -426,12 +443,41 @@
             this.tbDbPassword.TabIndex = 1;
             this.tbDbPassword.Text = global::xTwitter_collector.Properties.Settings.Default.tbDbPassword;
             // 
-            // tbTimelineTestUserScreenName
+            // columnHeader9
             // 
-            this.tbTimelineTestUserScreenName.Location = new System.Drawing.Point(299, 493);
-            this.tbTimelineTestUserScreenName.Name = "tbTimelineTestUserScreenName";
-            this.tbTimelineTestUserScreenName.Size = new System.Drawing.Size(206, 23);
-            this.tbTimelineTestUserScreenName.TabIndex = 4;
+            this.columnHeader9.Text = "ID";
+            // 
+            // contextMenuStripLvApiToken
+            // 
+            this.contextMenuStripLvApiToken.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.삭제ToolStripMenuItem,
+            this.삭제ToolStripMenuItem1});
+            this.contextMenuStripLvApiToken.Name = "contextMenuStripLvApiToken";
+            this.contextMenuStripLvApiToken.Size = new System.Drawing.Size(137, 48);
+            // 
+            // 삭제ToolStripMenuItem
+            // 
+            this.삭제ToolStripMenuItem.Name = "삭제ToolStripMenuItem";
+            this.삭제ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.삭제ToolStripMenuItem.Text = "새로고침(&E)";
+            this.삭제ToolStripMenuItem.Click += new System.EventHandler(this.삭제ToolStripMenuItem_Click);
+            // 
+            // 삭제ToolStripMenuItem1
+            // 
+            this.삭제ToolStripMenuItem1.Name = "삭제ToolStripMenuItem1";
+            this.삭제ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.삭제ToolStripMenuItem1.Text = "삭제(&D)";
+            this.삭제ToolStripMenuItem1.Click += new System.EventHandler(this.삭제ToolStripMenuItem1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(299, 198);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "stress test(DO NOT CLICK ME)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMain
             // 
@@ -443,7 +489,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMain";
-            this.Text = "xTwitter Collector";
+            this.Text = "xTwitter Collector(Not Connected)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.groupBox_DBConnection.ResumeLayout(false);
             this.tableLayoutPanel.ResumeLayout(false);
@@ -458,6 +504,7 @@
             this.tabCollectTest.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.contextMenuStripLvApiToken.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -499,6 +546,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_DBConnection;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_APIToken;
         private System.Windows.Forms.TextBox tbTimelineTestUserScreenName;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripLvApiToken;
+        private System.Windows.Forms.ToolStripMenuItem 삭제ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 삭제ToolStripMenuItem1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
