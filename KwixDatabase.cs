@@ -59,26 +59,53 @@ namespace xTwitter_collector
             }
         }
 
-        public List<ApiToken> ReadApiToken()
+        public void CheckConnection()
         {
             if (!IsConnected())
             {
-                throw new Exception("database not connected yet");
+                throw new Exception("database not connected");
             }
+        }
 
+        public List<ApiToken> ReadApiToken()
+        {
+            CheckConnection();
             return db.ApiToken.ToList();
         }
 
         public void CreateApiToken(ApiToken token)
         {
-            if (!IsConnected())
-            {
-                throw new Exception("database not connected yet");
-            }
+            CheckConnection();
             try
             {
                 db.ApiToken.Add(token);
                 db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeleteApiToken(ApiToken token)
+        {
+            CheckConnection();
+            try
+            {
+                db.ApiToken.Remove(token);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DeleteApiToken(int idx)
+        {
+            try
+            {
+                DeleteApiToken(db.ApiToken.ToArray()[idx]);
             }
             catch (Exception ex)
             {
