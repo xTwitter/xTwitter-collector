@@ -14,6 +14,7 @@ namespace xTwitter_collector
 
         public virtual DbSet<ApiToken> ApiToken { get; set; }
         public virtual DbSet<Relation> Relation { get; set; }
+        public virtual DbSet<TaskQueue> TaskQueue { get; set; }
         public virtual DbSet<test> test { get; set; }
         public virtual DbSet<Tweet> Tweet { get; set; }
         public virtual DbSet<User> User { get; set; }
