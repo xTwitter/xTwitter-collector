@@ -104,5 +104,19 @@ namespace xTwitter_collector
             }
             
         }
+
+        private async void btnTimelineTest_Click(object sender, EventArgs e)
+        {
+            lvTimelineTest.Items.Clear();
+            ApiToken token = kd.ReadApiToken()[0];
+            TwitterApi api = new TwitterApi();
+            api.InitAuth(token);
+            User user = new User();
+            foreach(Tweet tweet in await api.ReadTimeline(user))
+            {
+                //ListViewItem item = new ListViewItem(new string[] {tweet.text, tweet.retweet_count });
+                // TODO : 트윗받아온거 타임라인 listview에 반영하기..
+            }
+        }
     }
 }

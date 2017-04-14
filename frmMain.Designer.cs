@@ -52,12 +52,19 @@
             this.tabQueue = new System.Windows.Forms.TabPage();
             this.tabStatus = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lvTimelineTest = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbTimelineTestName = new System.Windows.Forms.TextBox();
+            this.btnTimelineTest = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabDbConfig.SuspendLayout();
             this.tabApiToken.SuspendLayout();
             this.tabCollectTest.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -272,12 +279,62 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnTimelineTest);
+            this.groupBox3.Controls.Add(this.tbTimelineTestName);
+            this.groupBox3.Controls.Add(this.lvTimelineTest);
             this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 531);
+            this.groupBox3.Size = new System.Drawing.Size(715, 569);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "timeline ";
+            // 
+            // lvTimelineTest
+            // 
+            this.lvTimelineTest.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.lvTimelineTest.FullRowSelect = true;
+            this.lvTimelineTest.GridLines = true;
+            this.lvTimelineTest.Location = new System.Drawing.Point(6, 20);
+            this.lvTimelineTest.Name = "lvTimelineTest";
+            this.lvTimelineTest.Size = new System.Drawing.Size(703, 511);
+            this.lvTimelineTest.TabIndex = 0;
+            this.lvTimelineTest.UseCompatibleStateImageBehavior = false;
+            this.lvTimelineTest.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Text";
+            this.columnHeader6.Width = 276;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Retweet Count";
+            this.columnHeader7.Width = 63;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Favorite Count";
+            this.columnHeader8.Width = 72;
+            // 
+            // tbTimelineTestName
+            // 
+            this.tbTimelineTestName.Location = new System.Drawing.Point(59, 541);
+            this.tbTimelineTestName.Name = "tbTimelineTestName";
+            this.tbTimelineTestName.Size = new System.Drawing.Size(165, 21);
+            this.tbTimelineTestName.TabIndex = 1;
+            // 
+            // btnTimelineTest
+            // 
+            this.btnTimelineTest.Location = new System.Drawing.Point(341, 541);
+            this.btnTimelineTest.Name = "btnTimelineTest";
+            this.btnTimelineTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTimelineTest.TabIndex = 2;
+            this.btnTimelineTest.Text = "refresh";
+            this.btnTimelineTest.UseVisualStyleBackColor = true;
+            this.btnTimelineTest.Click += new System.EventHandler(this.btnTimelineTest_Click);
             // 
             // frmMain
             // 
@@ -299,6 +356,8 @@
             this.tabDbConfig.ResumeLayout(false);
             this.tabApiToken.ResumeLayout(false);
             this.tabCollectTest.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -329,6 +388,12 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TabPage tabQueue;
         private System.Windows.Forms.TabPage tabStatus;
+        private System.Windows.Forms.Button btnTimelineTest;
+        private System.Windows.Forms.TextBox tbTimelineTestName;
+        private System.Windows.Forms.ListView lvTimelineTest;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }
 
