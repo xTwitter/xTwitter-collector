@@ -97,18 +97,21 @@ namespace xTwitter_collector
 
         private async void btnTimelineTest_Click(object sender, EventArgs e)
         {
-            lvTimelineTest.Items.Clear();
-            ApiToken token = kd.ReadApiToken()[0];
-            /*
+            ApiToken token;
             TwitterApi api = new TwitterApi();
-            api.InitAuth(token);
             User user = new User();
-            foreach(Tweet tweet in await api.ReadTimeline(user))
+
+            lvTimelineTest.Items.Clear();
+            // TODO : request count를 토큰마다 저장해 적절히 분배하도록 한다
+            token = kd.ReadApiToken()[0];
+            api.InitAuth(token);
+            user.screen_name = tbTimelineTestUserScreenName.Text;
+            
+            foreach (Tweet tweet in await api.ReadTimeline(user))
             {
-                //ListViewItem item = new ListViewItem(new string[] {tweet.text, tweet.retweet_count });
-                // TODO : 트윗받아온거 타임라인 listview에 반영하기..
+                ListViewItem item = new ListViewItem(new string[] {tweet.text, tweet.retweet_count.ToString(), tweet.favorite_count.ToString() });
+                lvTimelineTest.Items.Add(item);
             }
-            */
         }
     }
 }
