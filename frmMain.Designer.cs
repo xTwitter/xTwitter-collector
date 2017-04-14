@@ -31,20 +31,24 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox_DBConnection = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.btnDbConnectionTest = new System.Windows.Forms.Button();
             this.label_User = new System.Windows.Forms.Label();
             this.textBox_User = new System.Windows.Forms.TextBox();
             this.label_Password = new System.Windows.Forms.Label();
+            this.btnDbConnectionTest = new System.Windows.Forms.Button();
+            this.tbDbPassword = new System.Windows.Forms.TextBox();
             this.groupBox_APIToken = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel_APIToken = new System.Windows.Forms.TableLayoutPanel();
-            this.btnApiTokenAdd = new System.Windows.Forms.Button();
             this.lvApiToken = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripLvApiToken = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.삭제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.삭제ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tbApiTokenAccessTokenSecret = new System.Windows.Forms.TextBox();
+            this.btnApiTokenAdd = new System.Windows.Forms.Button();
             this.tbApiTokenAccessToken = new System.Windows.Forms.TextBox();
             this.tbApiTokenName = new System.Windows.Forms.TextBox();
             this.tbApiTokenConsumerKey = new System.Windows.Forms.TextBox();
@@ -55,31 +59,27 @@
             this.tabApiToken = new System.Windows.Forms.TabPage();
             this.tabCollectTest = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnStressTest = new System.Windows.Forms.Button();
+            this.tbTimelineTestUserScreenName = new System.Windows.Forms.TextBox();
             this.btnTimelineTest = new System.Windows.Forms.Button();
             this.lvTimelineTest = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabQueue = new System.Windows.Forms.TabPage();
             this.tabStatus = new System.Windows.Forms.TabPage();
-            this.tbTimelineTestUserScreenName = new System.Windows.Forms.TextBox();
-            this.tbDbPassword = new System.Windows.Forms.TextBox();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStripLvApiToken = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.삭제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.삭제ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox_DBConnection.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.groupBox_APIToken.SuspendLayout();
             this.tableLayoutPanel_APIToken.SuspendLayout();
+            this.contextMenuStripLvApiToken.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabDbConfig.SuspendLayout();
             this.tableLayoutPanel_DBConnection.SuspendLayout();
             this.tabApiToken.SuspendLayout();
             this.tabCollectTest.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.contextMenuStripLvApiToken.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_DBConnection
@@ -114,18 +114,6 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(194, 98);
             this.tableLayoutPanel.TabIndex = 5;
             // 
-            // btnDbConnectionTest
-            // 
-            this.btnDbConnectionTest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel.SetColumnSpan(this.btnDbConnectionTest, 2);
-            this.btnDbConnectionTest.Location = new System.Drawing.Point(59, 70);
-            this.btnDbConnectionTest.Name = "btnDbConnectionTest";
-            this.btnDbConnectionTest.Size = new System.Drawing.Size(75, 22);
-            this.btnDbConnectionTest.TabIndex = 2;
-            this.btnDbConnectionTest.Text = "Test";
-            this.btnDbConnectionTest.UseVisualStyleBackColor = true;
-            this.btnDbConnectionTest.Click += new System.EventHandler(this.btnDbConnectionTest_Click);
-            // 
             // label_User
             // 
             this.label_User.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -155,6 +143,29 @@
             this.label_Password.Size = new System.Drawing.Size(57, 15);
             this.label_Password.TabIndex = 0;
             this.label_Password.Text = "Password";
+            // 
+            // btnDbConnectionTest
+            // 
+            this.btnDbConnectionTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel.SetColumnSpan(this.btnDbConnectionTest, 2);
+            this.btnDbConnectionTest.Location = new System.Drawing.Point(59, 70);
+            this.btnDbConnectionTest.Name = "btnDbConnectionTest";
+            this.btnDbConnectionTest.Size = new System.Drawing.Size(75, 22);
+            this.btnDbConnectionTest.TabIndex = 2;
+            this.btnDbConnectionTest.Text = "Test";
+            this.btnDbConnectionTest.UseVisualStyleBackColor = true;
+            this.btnDbConnectionTest.Click += new System.EventHandler(this.btnDbConnectionTest_Click);
+            // 
+            // tbDbPassword
+            // 
+            this.tbDbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbDbPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbDbPassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbDbPassword.Location = new System.Drawing.Point(80, 36);
+            this.tbDbPassword.Name = "tbDbPassword";
+            this.tbDbPassword.PasswordChar = '*';
+            this.tbDbPassword.Size = new System.Drawing.Size(111, 23);
+            this.tbDbPassword.TabIndex = 1;
+            this.tbDbPassword.Text = global::xTwitter_collector.Properties.Settings.Default.tbDbPassword;
             // 
             // groupBox_APIToken
             // 
@@ -191,18 +202,6 @@
             this.tableLayoutPanel_APIToken.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
             this.tableLayoutPanel_APIToken.Size = new System.Drawing.Size(764, 505);
             this.tableLayoutPanel_APIToken.TabIndex = 7;
-            // 
-            // btnApiTokenAdd
-            // 
-            this.btnApiTokenAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel_APIToken.SetColumnSpan(this.btnApiTokenAdd, 5);
-            this.btnApiTokenAdd.Location = new System.Drawing.Point(344, 474);
-            this.btnApiTokenAdd.Name = "btnApiTokenAdd";
-            this.btnApiTokenAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnApiTokenAdd.TabIndex = 6;
-            this.btnApiTokenAdd.Text = "Add";
-            this.btnApiTokenAdd.UseVisualStyleBackColor = true;
-            this.btnApiTokenAdd.Click += new System.EventHandler(this.btnApiTokenAdd_Click);
             // 
             // lvApiToken
             // 
@@ -252,6 +251,28 @@
             this.columnHeader5.Text = "AccessTokenSecret";
             this.columnHeader5.Width = 196;
             // 
+            // contextMenuStripLvApiToken
+            // 
+            this.contextMenuStripLvApiToken.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.삭제ToolStripMenuItem,
+            this.삭제ToolStripMenuItem1});
+            this.contextMenuStripLvApiToken.Name = "contextMenuStripLvApiToken";
+            this.contextMenuStripLvApiToken.Size = new System.Drawing.Size(137, 48);
+            // 
+            // 삭제ToolStripMenuItem
+            // 
+            this.삭제ToolStripMenuItem.Name = "삭제ToolStripMenuItem";
+            this.삭제ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.삭제ToolStripMenuItem.Text = "새로고침(&E)";
+            this.삭제ToolStripMenuItem.Click += new System.EventHandler(this.삭제ToolStripMenuItem_Click);
+            // 
+            // 삭제ToolStripMenuItem1
+            // 
+            this.삭제ToolStripMenuItem1.Name = "삭제ToolStripMenuItem1";
+            this.삭제ToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.삭제ToolStripMenuItem1.Text = "삭제(&D)";
+            this.삭제ToolStripMenuItem1.Click += new System.EventHandler(this.삭제ToolStripMenuItem1_Click);
+            // 
             // tbApiTokenAccessTokenSecret
             // 
             this.tbApiTokenAccessTokenSecret.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -259,6 +280,18 @@
             this.tbApiTokenAccessTokenSecret.Name = "tbApiTokenAccessTokenSecret";
             this.tbApiTokenAccessTokenSecret.Size = new System.Drawing.Size(150, 23);
             this.tbApiTokenAccessTokenSecret.TabIndex = 5;
+            // 
+            // btnApiTokenAdd
+            // 
+            this.btnApiTokenAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel_APIToken.SetColumnSpan(this.btnApiTokenAdd, 5);
+            this.btnApiTokenAdd.Location = new System.Drawing.Point(344, 474);
+            this.btnApiTokenAdd.Name = "btnApiTokenAdd";
+            this.btnApiTokenAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnApiTokenAdd.TabIndex = 6;
+            this.btnApiTokenAdd.Text = "Add";
+            this.btnApiTokenAdd.UseVisualStyleBackColor = true;
+            this.btnApiTokenAdd.Click += new System.EventHandler(this.btnApiTokenAdd_Click);
             // 
             // tbApiTokenAccessToken
             // 
@@ -354,7 +387,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnStressTest);
             this.groupBox3.Controls.Add(this.tbTimelineTestUserScreenName);
             this.groupBox3.Controls.Add(this.btnTimelineTest);
             this.groupBox3.Controls.Add(this.lvTimelineTest);
@@ -365,6 +398,23 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Timeline ";
+            // 
+            // btnStressTest
+            // 
+            this.btnStressTest.Location = new System.Drawing.Point(299, 198);
+            this.btnStressTest.Name = "btnStressTest";
+            this.btnStressTest.Size = new System.Drawing.Size(180, 23);
+            this.btnStressTest.TabIndex = 5;
+            this.btnStressTest.Text = "stress test(DO NOT CLICK ME)";
+            this.btnStressTest.UseVisualStyleBackColor = true;
+            this.btnStressTest.Click += new System.EventHandler(this.btnStressTest_Click);
+            // 
+            // tbTimelineTestUserScreenName
+            // 
+            this.tbTimelineTestUserScreenName.Location = new System.Drawing.Point(6, 199);
+            this.tbTimelineTestUserScreenName.Name = "tbTimelineTestUserScreenName";
+            this.tbTimelineTestUserScreenName.Size = new System.Drawing.Size(206, 23);
+            this.tbTimelineTestUserScreenName.TabIndex = 4;
             // 
             // btnTimelineTest
             // 
@@ -391,6 +441,10 @@
             this.lvTimelineTest.TabIndex = 0;
             this.lvTimelineTest.UseCompatibleStateImageBehavior = false;
             this.lvTimelineTest.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "ID";
             // 
             // columnHeader6
             // 
@@ -425,60 +479,6 @@
             this.tabStatus.Text = "Status";
             this.tabStatus.UseVisualStyleBackColor = true;
             // 
-            // tbTimelineTestUserScreenName
-            // 
-            this.tbTimelineTestUserScreenName.Location = new System.Drawing.Point(6, 199);
-            this.tbTimelineTestUserScreenName.Name = "tbTimelineTestUserScreenName";
-            this.tbTimelineTestUserScreenName.Size = new System.Drawing.Size(206, 23);
-            this.tbTimelineTestUserScreenName.TabIndex = 4;
-            // 
-            // tbDbPassword
-            // 
-            this.tbDbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbDbPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbDbPassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbDbPassword.Location = new System.Drawing.Point(80, 36);
-            this.tbDbPassword.Name = "tbDbPassword";
-            this.tbDbPassword.PasswordChar = '*';
-            this.tbDbPassword.Size = new System.Drawing.Size(111, 23);
-            this.tbDbPassword.TabIndex = 1;
-            this.tbDbPassword.Text = global::xTwitter_collector.Properties.Settings.Default.tbDbPassword;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "ID";
-            // 
-            // contextMenuStripLvApiToken
-            // 
-            this.contextMenuStripLvApiToken.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.삭제ToolStripMenuItem,
-            this.삭제ToolStripMenuItem1});
-            this.contextMenuStripLvApiToken.Name = "contextMenuStripLvApiToken";
-            this.contextMenuStripLvApiToken.Size = new System.Drawing.Size(137, 48);
-            // 
-            // 삭제ToolStripMenuItem
-            // 
-            this.삭제ToolStripMenuItem.Name = "삭제ToolStripMenuItem";
-            this.삭제ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.삭제ToolStripMenuItem.Text = "새로고침(&E)";
-            this.삭제ToolStripMenuItem.Click += new System.EventHandler(this.삭제ToolStripMenuItem_Click);
-            // 
-            // 삭제ToolStripMenuItem1
-            // 
-            this.삭제ToolStripMenuItem1.Name = "삭제ToolStripMenuItem1";
-            this.삭제ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.삭제ToolStripMenuItem1.Text = "삭제(&D)";
-            this.삭제ToolStripMenuItem1.Click += new System.EventHandler(this.삭제ToolStripMenuItem1_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(299, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "stress test(DO NOT CLICK ME)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -497,6 +497,7 @@
             this.groupBox_APIToken.ResumeLayout(false);
             this.tableLayoutPanel_APIToken.ResumeLayout(false);
             this.tableLayoutPanel_APIToken.PerformLayout();
+            this.contextMenuStripLvApiToken.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabDbConfig.ResumeLayout(false);
             this.tableLayoutPanel_DBConnection.ResumeLayout(false);
@@ -504,7 +505,6 @@
             this.tabCollectTest.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.contextMenuStripLvApiToken.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -550,7 +550,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripLvApiToken;
         private System.Windows.Forms.ToolStripMenuItem 삭제ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 삭제ToolStripMenuItem1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStressTest;
     }
 }
 

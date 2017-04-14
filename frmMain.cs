@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -140,9 +141,34 @@ namespace xTwitter_collector
             SyncApiTokenListView();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void btnStressTest_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                TwitterApi api = new TwitterApi();
+                api.InitAuth(kd.ReadApiToken()[0]);
+                lvTimelineTest.Items.Clear();
+                int i = 0;
+                while(true)
+                {
+                    i++;
+                    List<Tweet> tweets = await api.ReadTimeline(new User()
+                    {
+                        screen_name = tbTimelineTestUserScreenName.Text
+                    });
+
+                    lvTimelineTest.Items.Add($"{i}번째 tweets.count : {tweets.Count}");
+                    lvTimelineTest.Items[lvTimelineTest.Items.Count - 1].EnsureVisible();
+                }
+            }
+            catch(LinqToTwitter.TwitterQueryException ex)
+            {
+                lvTimelineTest.Items.Add("twitter query 에러");
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
