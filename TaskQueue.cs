@@ -12,5 +12,8 @@ namespace xTwitter_collector
         public decimal id { get; set; }
 
         public int? type { get; set; }
+
+        [Key]
+        public long pk { get; set; }
     }
 }
