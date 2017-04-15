@@ -423,11 +423,15 @@ namespace xTwitter_collector
                             // retweet갯수가 하나라도 있으면 queue에 집어넣는다 (비효율적인거같긴하다)
                             if (tweet.RetweetCount > 0)
                             {
-                                kd.db.TaskQueue.Add(new TaskQueue()
+                                // queue 중복 검사
+                                if( !kd.db.TaskQueue.Any(a=>a.id == tweet.StatusID && a.type == (Int32)QueueType.Tweet))
                                 {
-                                    id = tweet.StatusID,
-                                    type = (Int32)QueueType.Tweet
-                                });
+                                    kd.db.TaskQueue.Add(new TaskQueue()
+                                    {
+                                        id = tweet.StatusID,
+                                        type = (Int32)QueueType.Tweet
+                                    });
+                                }
                             }
                             // db저장
                             kd.db.SaveChanges();
@@ -539,11 +543,15 @@ namespace xTwitter_collector
                             // follower수와  수가 합쳐서 100이상이면 넣는다
                             if (tweet.User.FollowersCount >= 100)
                             {
-                                kd.db.TaskQueue.Add(new TaskQueue()
+                                decimal id = Convert.ToDecimal(tweet.User.UserIDResponse);
+                                if( !kd.db.TaskQueue.Any(a=>a.id==id && a.type == (Int32)QueueType.User))
                                 {
-                                    id = Convert.ToDecimal(tweet.User.UserIDResponse),
-                                    type = (Int32)QueueType.User
-                                });
+                                    kd.db.TaskQueue.Add(new TaskQueue()
+                                    {
+                                        id = Convert.ToDecimal(tweet.User.UserIDResponse),
+                                        type = (Int32)QueueType.User
+                                    });
+                                }
                             }
                             // db저장
                             kd.db.SaveChanges();
