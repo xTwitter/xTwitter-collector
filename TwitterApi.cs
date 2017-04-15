@@ -42,11 +42,24 @@ namespace xTwitter_collector
             return false;
         }
 
-        public async Task<List<Tweet>> ReadTimeline(User user)
+        public async Task<List<Status>> ReadTimeline(User user)
         {
+            //var a = await (from tweet in twitterContext.Status
+            //               where tweet.Type == StatusType.User
+            //                     && tweet.UserID == user.id
+            //                     && tweet.Count == 100
+            //               select tweet).ToListAsync();
+
             return await (from tweet in twitterContext.Status
                           where tweet.Type == StatusType.User
+                                && tweet.UserID == user.id
+                                && tweet.Count == 100
+                          select tweet).ToListAsync();
+
+            /*return await (from tweet in twitterContext.Status
+                          where tweet.Type == StatusType.User
                                 && tweet.ScreenName == user.screen_name
+                                && tweet.Count == 100
                           select new Tweet()
                           {
                               id = tweet.StatusID,
@@ -54,8 +67,42 @@ namespace xTwitter_collector
                               source = tweet.Source,
                               favorite_count = tweet.FavoriteCount,
                               retweet_count = tweet.RetweetCount,
-                              created_at = tweet.CreatedAt
-                          }).ToListAsync();
+                              created_at = tweet.CreatedAt,
+                              user_id = tweet.UserID,
+                          }).ToListAsync();*/
         }
+
+        public async Task<List<Status>> ReadRetweet(Tweet tweet)
+        {
+            //var a = await (from t in twitterContext.Status
+            //               where t.Type == StatusType.Retweets
+            //                     && t.ID == tweet.id
+            //                     && t.Count == 100
+            //               select t).ToListAsync();
+
+            return await (from t in twitterContext.Status
+                          where t.Type == StatusType.Retweets
+                                && t.ID == tweet.id
+                                && t.Count == 100
+                          select t).ToListAsync();
+
+            /*
+            return await (from t in twitterContext.Status
+                           where t.Type == StatusType.Retweets 
+                                 && t.ID == tweet.id
+                                 && t.Count == 100
+                           select new Tweet()
+                           {
+                               id = t.StatusID,
+                               text = t.Text,
+                               source = t.Source,
+                               favorite_count = t.FavoriteCount,
+                               retweet_count = t.RetweetCount,
+                               created_at = t.CreatedAt,
+                               user_id = Convert.ToDecimal(t.User.UserIDResponse)
+                           }).ToListAsync();
+                       */
+        }
+
     }
 }

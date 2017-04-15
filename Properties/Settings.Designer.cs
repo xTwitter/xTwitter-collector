@@ -34,5 +34,41 @@ namespace xTwitter_collector.Properties {
                 this["tbDbPassword"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string tbRetweetTestTweetId {
+            get {
+                return ((string)(this["tbRetweetTestTweetId"]));
+            }
+            set {
+                this["tbRetweetTestTweetId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string tbTimelineTestUserScreenName {
+            get {
+                return ((string)(this["tbTimelineTestUserScreenName"]));
+            }
+            set {
+                this["tbTimelineTestUserScreenName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool checkCollectLogAutoScroll {
+            get {
+                return ((bool)(this["checkCollectLogAutoScroll"]));
+            }
+            set {
+                this["checkCollectLogAutoScroll"] = value;
+            }
+        }
     }
 }

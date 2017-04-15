@@ -93,16 +93,6 @@ namespace xTwitter_collector
                 .Property(e => e.media_info)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Tweet>()
-                .HasMany(e => e.Relation)
-                .WithOptional(e => e.Tweet)
-                .HasForeignKey(e => e.retweeted_tweet_id);
-
-            modelBuilder.Entity<Tweet>()
-                .HasMany(e => e.Relation1)
-                .WithOptional(e => e.Tweet1)
-                .HasForeignKey(e => e.tweet_id);
-
             modelBuilder.Entity<User>()
                 .Property(e => e.id)
                 .HasPrecision(20, 0);
@@ -118,26 +108,6 @@ namespace xTwitter_collector
             modelBuilder.Entity<User>()
                 .Property(e => e.description)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.Relation)
-                .WithOptional(e => e.User)
-                .HasForeignKey(e => e.user_id);
-
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.Relation1)
-                .WithOptional(e => e.User1)
-                .HasForeignKey(e => e.mentioned_user_id);
-
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.Relation2)
-                .WithOptional(e => e.User2)
-                .HasForeignKey(e => e.followed_user_id);
-
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.Tweet)
-                .WithOptional(e => e.User)
-                .HasForeignKey(e => e.user_id);
         }
     }
 }

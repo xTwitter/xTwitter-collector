@@ -35,7 +35,6 @@
             this.textBox_User = new System.Windows.Forms.TextBox();
             this.label_Password = new System.Windows.Forms.Label();
             this.btnDbConnectionTest = new System.Windows.Forms.Button();
-            this.tbDbPassword = new System.Windows.Forms.TextBox();
             this.groupBox_APIToken = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel_APIToken = new System.Windows.Forms.TableLayoutPanel();
             this.lvApiToken = new System.Windows.Forms.ListView();
@@ -60,7 +59,6 @@
             this.tabCollectTest = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnStressTest = new System.Windows.Forms.Button();
-            this.tbTimelineTestUserScreenName = new System.Windows.Forms.TextBox();
             this.btnTimelineTest = new System.Windows.Forms.Button();
             this.lvTimelineTest = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,6 +67,34 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabQueue = new System.Windows.Forms.TabPage();
             this.tabStatus = new System.Windows.Forms.TabPage();
+            this.lvQueue = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabCollect = new System.Windows.Forms.TabPage();
+            this.btnCollectStart = new System.Windows.Forms.Button();
+            this.lbStatus = new System.Windows.Forms.Label();
+            this.timerStatus = new System.Windows.Forms.Timer(this.components);
+            this.lvRetweet = new System.Windows.Forms.ListView();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnRetweetTest = new System.Windows.Forms.Button();
+            this.lvCollectLog = new System.Windows.Forms.ListView();
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbDbPassword = new System.Windows.Forms.TextBox();
+            this.tbRetweetTestTweetId = new System.Windows.Forms.TextBox();
+            this.tbTimelineTestUserScreenName = new System.Windows.Forms.TextBox();
+            this.checkCollectLogAutoScroll = new System.Windows.Forms.CheckBox();
+            this.tbQueueId = new System.Windows.Forms.TextBox();
+            this.btnQueueAdd = new System.Windows.Forms.Button();
+            this.tbQueueType = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCollectTest = new System.Windows.Forms.Button();
+            this.contextMenuStripLvQueue = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_DBConnection.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             this.groupBox_APIToken.SuspendLayout();
@@ -80,6 +106,10 @@
             this.tabApiToken.SuspendLayout();
             this.tabCollectTest.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabQueue.SuspendLayout();
+            this.tabStatus.SuspendLayout();
+            this.tabCollect.SuspendLayout();
+            this.contextMenuStripLvQueue.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_DBConnection
@@ -155,17 +185,6 @@
             this.btnDbConnectionTest.Text = "Test";
             this.btnDbConnectionTest.UseVisualStyleBackColor = true;
             this.btnDbConnectionTest.Click += new System.EventHandler(this.btnDbConnectionTest_Click);
-            // 
-            // tbDbPassword
-            // 
-            this.tbDbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbDbPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbDbPassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbDbPassword.Location = new System.Drawing.Point(80, 36);
-            this.tbDbPassword.Name = "tbDbPassword";
-            this.tbDbPassword.PasswordChar = '*';
-            this.tbDbPassword.Size = new System.Drawing.Size(111, 23);
-            this.tbDbPassword.TabIndex = 1;
-            this.tbDbPassword.Text = global::xTwitter_collector.Properties.Settings.Default.tbDbPassword;
             // 
             // groupBox_APIToken
             // 
@@ -258,6 +277,7 @@
             this.삭제ToolStripMenuItem1});
             this.contextMenuStripLvApiToken.Name = "contextMenuStripLvApiToken";
             this.contextMenuStripLvApiToken.Size = new System.Drawing.Size(137, 48);
+            this.contextMenuStripLvApiToken.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripLvApiToken_Opening);
             // 
             // 삭제ToolStripMenuItem
             // 
@@ -332,6 +352,7 @@
             this.tabControl.Controls.Add(this.tabCollectTest);
             this.tabControl.Controls.Add(this.tabQueue);
             this.tabControl.Controls.Add(this.tabStatus);
+            this.tabControl.Controls.Add(this.tabCollect);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -387,6 +408,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tbRetweetTestTweetId);
+            this.groupBox3.Controls.Add(this.btnRetweetTest);
+            this.groupBox3.Controls.Add(this.lvRetweet);
             this.groupBox3.Controls.Add(this.btnStressTest);
             this.groupBox3.Controls.Add(this.tbTimelineTestUserScreenName);
             this.groupBox3.Controls.Add(this.btnTimelineTest);
@@ -408,13 +432,6 @@
             this.btnStressTest.Text = "stress test(DO NOT CLICK ME)";
             this.btnStressTest.UseVisualStyleBackColor = true;
             this.btnStressTest.Click += new System.EventHandler(this.btnStressTest_Click);
-            // 
-            // tbTimelineTestUserScreenName
-            // 
-            this.tbTimelineTestUserScreenName.Location = new System.Drawing.Point(6, 199);
-            this.tbTimelineTestUserScreenName.Name = "tbTimelineTestUserScreenName";
-            this.tbTimelineTestUserScreenName.Size = new System.Drawing.Size(206, 23);
-            this.tbTimelineTestUserScreenName.TabIndex = 4;
             // 
             // btnTimelineTest
             // 
@@ -463,6 +480,11 @@
             // 
             // tabQueue
             // 
+            this.tabQueue.Controls.Add(this.label1);
+            this.tabQueue.Controls.Add(this.tbQueueType);
+            this.tabQueue.Controls.Add(this.btnQueueAdd);
+            this.tabQueue.Controls.Add(this.tbQueueId);
+            this.tabQueue.Controls.Add(this.lvQueue);
             this.tabQueue.Location = new System.Drawing.Point(4, 24);
             this.tabQueue.Name = "tabQueue";
             this.tabQueue.Size = new System.Drawing.Size(776, 533);
@@ -472,12 +494,251 @@
             // 
             // tabStatus
             // 
+            this.tabStatus.Controls.Add(this.lbStatus);
             this.tabStatus.Location = new System.Drawing.Point(4, 24);
             this.tabStatus.Name = "tabStatus";
             this.tabStatus.Size = new System.Drawing.Size(776, 533);
             this.tabStatus.TabIndex = 4;
             this.tabStatus.Text = "Status";
             this.tabStatus.UseVisualStyleBackColor = true;
+            // 
+            // lvQueue
+            // 
+            this.lvQueue.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10,
+            this.columnHeader11});
+            this.lvQueue.ContextMenuStrip = this.contextMenuStripLvQueue;
+            this.lvQueue.FullRowSelect = true;
+            this.lvQueue.GridLines = true;
+            this.lvQueue.Location = new System.Drawing.Point(3, 3);
+            this.lvQueue.Name = "lvQueue";
+            this.lvQueue.Size = new System.Drawing.Size(770, 489);
+            this.lvQueue.TabIndex = 0;
+            this.lvQueue.UseCompatibleStateImageBehavior = false;
+            this.lvQueue.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "id";
+            this.columnHeader10.Width = 510;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "type";
+            this.columnHeader11.Width = 241;
+            // 
+            // tabCollect
+            // 
+            this.tabCollect.Controls.Add(this.btnCollectTest);
+            this.tabCollect.Controls.Add(this.checkCollectLogAutoScroll);
+            this.tabCollect.Controls.Add(this.lvCollectLog);
+            this.tabCollect.Controls.Add(this.btnCollectStart);
+            this.tabCollect.Location = new System.Drawing.Point(4, 24);
+            this.tabCollect.Name = "tabCollect";
+            this.tabCollect.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCollect.Size = new System.Drawing.Size(776, 533);
+            this.tabCollect.TabIndex = 5;
+            this.tabCollect.Text = "Collect";
+            this.tabCollect.UseVisualStyleBackColor = true;
+            // 
+            // btnCollectStart
+            // 
+            this.btnCollectStart.Location = new System.Drawing.Point(669, 477);
+            this.btnCollectStart.Name = "btnCollectStart";
+            this.btnCollectStart.Size = new System.Drawing.Size(75, 23);
+            this.btnCollectStart.TabIndex = 0;
+            this.btnCollectStart.Text = "start";
+            this.btnCollectStart.UseVisualStyleBackColor = true;
+            this.btnCollectStart.Click += new System.EventHandler(this.btnCollectStart_Click);
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(83, 76);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(12, 15);
+            this.lbStatus.TabIndex = 0;
+            this.lbStatus.Text = "-";
+            // 
+            // timerStatus
+            // 
+            this.timerStatus.Interval = 1000;
+            this.timerStatus.Tick += new System.EventHandler(this.timerStatus_Tick);
+            // 
+            // lvRetweet
+            // 
+            this.lvRetweet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15});
+            this.lvRetweet.FullRowSelect = true;
+            this.lvRetweet.GridLines = true;
+            this.lvRetweet.Location = new System.Drawing.Point(3, 266);
+            this.lvRetweet.Name = "lvRetweet";
+            this.lvRetweet.Size = new System.Drawing.Size(767, 175);
+            this.lvRetweet.TabIndex = 6;
+            this.lvRetweet.UseCompatibleStateImageBehavior = false;
+            this.lvRetweet.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "ID";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Text";
+            this.columnHeader13.Width = 276;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Retweet Count";
+            this.columnHeader14.Width = 63;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Favorite Count";
+            this.columnHeader15.Width = 72;
+            // 
+            // btnRetweetTest
+            // 
+            this.btnRetweetTest.Location = new System.Drawing.Point(241, 464);
+            this.btnRetweetTest.Name = "btnRetweetTest";
+            this.btnRetweetTest.Size = new System.Drawing.Size(407, 23);
+            this.btnRetweetTest.TabIndex = 7;
+            this.btnRetweetTest.Text = "get retweet(forcely)";
+            this.btnRetweetTest.UseVisualStyleBackColor = true;
+            this.btnRetweetTest.Click += new System.EventHandler(this.btnRetweetTest_Click);
+            // 
+            // lvCollectLog
+            // 
+            this.lvCollectLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader16,
+            this.columnHeader17});
+            this.lvCollectLog.FullRowSelect = true;
+            this.lvCollectLog.GridLines = true;
+            this.lvCollectLog.Location = new System.Drawing.Point(8, 6);
+            this.lvCollectLog.Name = "lvCollectLog";
+            this.lvCollectLog.Size = new System.Drawing.Size(762, 443);
+            this.lvCollectLog.TabIndex = 1;
+            this.lvCollectLog.UseCompatibleStateImageBehavior = false;
+            this.lvCollectLog.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "시간";
+            this.columnHeader16.Width = 148;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "로그";
+            this.columnHeader17.Width = 597;
+            // 
+            // tbDbPassword
+            // 
+            this.tbDbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbDbPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbDbPassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbDbPassword.Location = new System.Drawing.Point(80, 36);
+            this.tbDbPassword.Name = "tbDbPassword";
+            this.tbDbPassword.PasswordChar = '*';
+            this.tbDbPassword.Size = new System.Drawing.Size(111, 23);
+            this.tbDbPassword.TabIndex = 1;
+            this.tbDbPassword.Text = global::xTwitter_collector.Properties.Settings.Default.tbDbPassword;
+            // 
+            // tbRetweetTestTweetId
+            // 
+            this.tbRetweetTestTweetId.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbRetweetTestTweetId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbRetweetTestTweetId.Location = new System.Drawing.Point(29, 465);
+            this.tbRetweetTestTweetId.Name = "tbRetweetTestTweetId";
+            this.tbRetweetTestTweetId.Size = new System.Drawing.Size(206, 23);
+            this.tbRetweetTestTweetId.TabIndex = 8;
+            this.tbRetweetTestTweetId.Text = global::xTwitter_collector.Properties.Settings.Default.tbRetweetTestTweetId;
+            // 
+            // tbTimelineTestUserScreenName
+            // 
+            this.tbTimelineTestUserScreenName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbTimelineTestUserScreenName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbTimelineTestUserScreenName.Location = new System.Drawing.Point(6, 199);
+            this.tbTimelineTestUserScreenName.Name = "tbTimelineTestUserScreenName";
+            this.tbTimelineTestUserScreenName.Size = new System.Drawing.Size(206, 23);
+            this.tbTimelineTestUserScreenName.TabIndex = 4;
+            this.tbTimelineTestUserScreenName.Text = global::xTwitter_collector.Properties.Settings.Default.tbTimelineTestUserScreenName;
+            // 
+            // checkCollectLogAutoScroll
+            // 
+            this.checkCollectLogAutoScroll.AutoSize = true;
+            this.checkCollectLogAutoScroll.Checked = global::xTwitter_collector.Properties.Settings.Default.checkCollectLogAutoScroll;
+            this.checkCollectLogAutoScroll.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xTwitter_collector.Properties.Settings.Default, "checkCollectLogAutoScroll", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkCollectLogAutoScroll.Location = new System.Drawing.Point(292, 468);
+            this.checkCollectLogAutoScroll.Name = "checkCollectLogAutoScroll";
+            this.checkCollectLogAutoScroll.Size = new System.Drawing.Size(86, 19);
+            this.checkCollectLogAutoScroll.TabIndex = 2;
+            this.checkCollectLogAutoScroll.Text = "자동스크롤";
+            this.checkCollectLogAutoScroll.UseVisualStyleBackColor = true;
+            // 
+            // tbQueueId
+            // 
+            this.tbQueueId.Location = new System.Drawing.Point(28, 498);
+            this.tbQueueId.Name = "tbQueueId";
+            this.tbQueueId.Size = new System.Drawing.Size(386, 23);
+            this.tbQueueId.TabIndex = 1;
+            // 
+            // btnQueueAdd
+            // 
+            this.btnQueueAdd.Location = new System.Drawing.Point(609, 497);
+            this.btnQueueAdd.Name = "btnQueueAdd";
+            this.btnQueueAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnQueueAdd.TabIndex = 2;
+            this.btnQueueAdd.Text = "add";
+            this.btnQueueAdd.UseVisualStyleBackColor = true;
+            this.btnQueueAdd.Click += new System.EventHandler(this.btnQueueAdd_Click);
+            // 
+            // tbQueueType
+            // 
+            this.tbQueueType.Location = new System.Drawing.Point(420, 498);
+            this.tbQueueType.Name = "tbQueueType";
+            this.tbQueueType.Size = new System.Drawing.Size(61, 23);
+            this.tbQueueType.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(498, 501);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "0 - User 1 - Tweet";
+            // 
+            // btnCollectTest
+            // 
+            this.btnCollectTest.Location = new System.Drawing.Point(36, 502);
+            this.btnCollectTest.Name = "btnCollectTest";
+            this.btnCollectTest.Size = new System.Drawing.Size(75, 23);
+            this.btnCollectTest.TabIndex = 3;
+            this.btnCollectTest.Text = "enum test";
+            this.btnCollectTest.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStripLvQueue
+            // 
+            this.contextMenuStripLvQueue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStripLvQueue.Name = "contextMenuStripLvApiToken";
+            this.contextMenuStripLvQueue.Size = new System.Drawing.Size(137, 48);
+            this.contextMenuStripLvQueue.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripLvQueue_Opening);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Text = "새로고침(&E)";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Text = "삭제(&D)";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // frmMain
             // 
@@ -505,6 +766,13 @@
             this.tabCollectTest.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabQueue.ResumeLayout(false);
+            this.tabQueue.PerformLayout();
+            this.tabStatus.ResumeLayout(false);
+            this.tabStatus.PerformLayout();
+            this.tabCollect.ResumeLayout(false);
+            this.tabCollect.PerformLayout();
+            this.contextMenuStripLvQueue.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -551,6 +819,32 @@
         private System.Windows.Forms.ToolStripMenuItem 삭제ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 삭제ToolStripMenuItem1;
         private System.Windows.Forms.Button btnStressTest;
+        private System.Windows.Forms.ListView lvQueue;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.TabPage tabCollect;
+        private System.Windows.Forms.Button btnCollectStart;
+        private System.Windows.Forms.Timer timerStatus;
+        private System.Windows.Forms.TextBox tbRetweetTestTweetId;
+        private System.Windows.Forms.Button btnRetweetTest;
+        private System.Windows.Forms.ListView lvRetweet;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.CheckBox checkCollectLogAutoScroll;
+        private System.Windows.Forms.ListView lvCollectLog;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.TextBox tbQueueId;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbQueueType;
+        private System.Windows.Forms.Button btnQueueAdd;
+        private System.Windows.Forms.Button btnCollectTest;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripLvQueue;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
 

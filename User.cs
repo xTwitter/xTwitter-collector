@@ -9,15 +9,6 @@ namespace xTwitter_collector
     [Table("User")]
     public partial class User
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
-        {
-            Relation = new HashSet<Relation>();
-            Relation1 = new HashSet<Relation>();
-            Relation2 = new HashSet<Relation>();
-            Tweet = new HashSet<Tweet>();
-        }
-
         public decimal id { get; set; }
 
         [Column(TypeName = "text")]
@@ -38,17 +29,5 @@ namespace xTwitter_collector
         public long? tweet_count { get; set; }
 
         public DateTime? created_at { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Relation> Relation { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Relation> Relation1 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Relation> Relation2 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tweet> Tweet { get; set; }
     }
 }
