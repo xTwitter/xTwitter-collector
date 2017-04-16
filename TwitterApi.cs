@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LinqToTwitter;
+using System.Net;
 
 namespace xTwitter_collector
 {
@@ -80,6 +81,8 @@ namespace xTwitter_collector
             //                     && t.Count == 100
             //               select t).ToListAsync();
 
+            tweet.id = FuckStatus(tweet.id);
+
             return await (from t in twitterContext.Status
                           where t.Type == StatusType.Retweets
                                 && t.ID == tweet.id
@@ -104,5 +107,18 @@ namespace xTwitter_collector
                        */
         }
 
+        public decimal FuckStatus(decimal id)
+        {
+            WebRequest req = WebRequest.Create($"http://twitter.com/fuckyoutwitter/status/{id}");
+            WebResponse res = req.GetResponse();
+            if( res.ResponseUri.AbsolutePath.IndexOf("/status/") >= 0 )
+            {
+                return Convert.ToDecimal(res.ResponseUri.AbsolutePath.Split(new string[] { "/status/" }, StringSplitOptions.None)[1]);
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -421,7 +421,8 @@ namespace xTwitter_collector
                             }
                             // queue 생성
                             // retweet갯수가 하나라도 있으면 queue에 집어넣는다 (비효율적인거같긴하다)
-                            if (tweet.RetweetCount > 0)
+                            // 이미 retweet된거면 안된다
+                            if (tweet.RetweetCount > 0 && tweet.RetweetedStatus.StatusID == 0)
                             {
                                 // queue 중복 검사
                                 if (!kd.db.TaskQueue.Any(a => a.id == tweet.StatusID && a.type == (Int32)QueueType.Tweet))
@@ -653,7 +654,7 @@ namespace xTwitter_collector
         {
             Tweet tweet = new Tweet()
             {
-                id = Convert.ToDecimal(tbRetweetTestTweetId.Text)
+                id = new TwitterApi().FuckStatus(Convert.ToDecimal(tbRetweetTestTweetId.Text))
             };
             TwitterApi api = new TwitterApi();
             api.InitAuth(kd.db.ApiToken.ToArray()[0]);
