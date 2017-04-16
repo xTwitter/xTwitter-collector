@@ -46,7 +46,7 @@ namespace xTwitter_collector
                 tbDbPassword.Enabled = false;
                 btnDbConnectionTest.Enabled = false;
                 // form caption도 바꿈
-                this.Text = "xTwitter Collector(Connected)";
+                this.Text = "xTwitter Collector (Connected)";
                 // api token listview에 gui update
                 SyncApiTokenListView();
                 // timer들 활성화
