@@ -424,7 +424,7 @@ namespace xTwitter_collector
                             if (tweet.RetweetCount > 0)
                             {
                                 // queue 중복 검사
-                                if( !kd.db.TaskQueue.Any(a=>a.id == tweet.StatusID && a.type == (Int32)QueueType.Tweet))
+                                if (!kd.db.TaskQueue.Any(a => a.id == tweet.StatusID && a.type == (Int32)QueueType.Tweet))
                                 {
                                     kd.db.TaskQueue.Add(new TaskQueue()
                                     {
@@ -544,7 +544,7 @@ namespace xTwitter_collector
                             if (tweet.User.FollowersCount >= 100)
                             {
                                 decimal id = Convert.ToDecimal(tweet.User.UserIDResponse);
-                                if( !kd.db.TaskQueue.Any(a=>a.id==id && a.type == (Int32)QueueType.User))
+                                if (!kd.db.TaskQueue.Any(a => a.id == id && a.type == (Int32)QueueType.User))
                                 {
                                     kd.db.TaskQueue.Add(new TaskQueue()
                                     {
@@ -564,19 +564,59 @@ namespace xTwitter_collector
                 }
                 catch (LinqToTwitter.TwitterQueryException ex)
                 {
-                    // limit 다찬거니까 auth 바꾸어준다
-                    CollectLog($"{token.name} 이 뻑갔다. 그러므로 다음걸사용하도록하게따.");
-                    // token이 삭제됐거나 마지막꺼일경우에는 첫번째거루.
-                    if (tokens.IndexOf(token) == -1 || tokens.Last() == token)
+                    // limit 이 다찬건지 아니면 없는 트윗이나 유저를 가르켜서 문제가 생긴건지.
+                    switch ((int)ex.StatusCode)
                     {
-                        token = tokens.First();
+                        case 429: // Too Many Requests
+                        case 420: // Enhance Your Calm
+                                  // limit 다찬거니까 auth 바꾸어준다
+                            CollectLog($"{token.name} 이 뻑갔다. 그러므로 다음걸사용하도록하게따.");
+                            // token이 삭제됐거나 마지막꺼일경우에는 첫번째거루.
+                            if (tokens.IndexOf(token) == -1 || tokens.Last() == token)
+                            {
+                                token = tokens.First();
+                            }
+                            // 아니면 다음꺼루
+                            else
+                            {
+                                token = tokens[tokens.IndexOf(token) + 1];
+                            }
+                            await Task.Delay(3);
+                            break;
+                        case 400: // Bad Request
+                        case 401: // Unauthorized
+                        case 403: // Forbidden
+                        case 404: // Not Found
+                        case 406: // Not Acceptable
+                        case 410: // Gone
+                        case 422: // Unprocessable Entity
+                            // 작업 queue에 문제있던가 해서.. 그냥 다음 큐로 넘어가야한다
+                            TaskQueue q = kd.db.TaskQueue.ToArray().First();
+                            CollectLog($"q에 문제있는 듯하다. q.id : {q.id} q.type : {Enum.GetName(typeof(QueueType), q.type)}");
+                            kd.db.TaskQueue.Remove(q);
+                            kd.db.SaveChanges();
+                            break;
+                        case 502: // Bad Gateway
+                        case 500: // Internal Server Error
+                        case 504: // Gateway timeout
+                        default:
+                            // 트위터 자체에 문제있는 거라고 한다. 그냥 10초정도 쉬었다가 다시 진행하자
+                            // 참고로 위의 코드들은 https://dev.twitter.com/overview/api/response-codes 여기서 가져왔다
+                            await Task.Delay(10);
+                            break;
                     }
-                    // 아니면 다음꺼루
-                    else
-                    {
-                        token = tokens[tokens.IndexOf(token) + 1];
-                    }
-                    await Task.Delay(3);
+
+                }
+                // 가끔 소켓통신 뽀록날때..
+                catch (System.Net.Http.HttpRequestException ex)
+                {
+                    // 로그에 남기기만하고 무시하고 다시 해보자
+                    CollectLog("소켓 통신 뽀록남");
+                }
+                catch (Exception ex)
+                {
+                    CollectLog(ex.Message);
+                    CollectLog(ex.StackTrace);
                 }
             }
 
