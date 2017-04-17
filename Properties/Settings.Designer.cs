@@ -70,5 +70,17 @@ namespace xTwitter_collector.Properties {
                 this["checkCollectLogAutoScroll"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool checkCollectLog {
+            get {
+                return ((bool)(this["checkCollectLog"]));
+            }
+            set {
+                this["checkCollectLog"] = value;
+            }
+        }
     }
 }
