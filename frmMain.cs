@@ -633,22 +633,25 @@ namespace xTwitter_collector
 
         public void CollectLog(string str)
         {
-            lvCollectLog.Items.Add(new ListViewItem(new string[]
+            if (!checkCollectLog.Checked)
             {
-                DateTime.Now.ToString(),
-                str
-            }));
-            if (checkCollectLogAutoScroll.Checked)
-            {
-                lvCollectLog.Items[lvCollectLog.Items.Count - 1].EnsureVisible();
+                lvCollectLog.Items.Add(new ListViewItem(new string[]
+                {
+                    DateTime.Now.ToString(),
+                    str
+                }));
+                if (checkCollectLogAutoScroll.Checked)
+                {
+                    lvCollectLog.Items[lvCollectLog.Items.Count - 1].EnsureVisible();
+                }
+                // 만개 넘어갔으면 하나 지우기
+                if (lvCollectLog.Items.Count > 10000)
+                {
+                    lvCollectLog.Items.RemoveAt(0);
+                }
+                // 로그 blocking 되지 않도록
+                Application.DoEvents();
             }
-            // 만개 넘어갔으면 하나 지우기
-            if (lvCollectLog.Items.Count > 10000)
-            {
-                lvCollectLog.Items.RemoveAt(0);
-            }
-            // 로그 blocking 되지 않도록
-            Application.DoEvents();
             // 파일에다가도써야지
             using (StreamWriter sw = File.AppendText("log.txt"))
             {

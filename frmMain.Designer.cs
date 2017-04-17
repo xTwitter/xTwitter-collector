@@ -59,48 +59,49 @@
             this.tabApiToken = new System.Windows.Forms.TabPage();
             this.tabCollectTest = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tbRetweetTestTweetId = new System.Windows.Forms.TextBox();
-            this.btnRetweetTest = new System.Windows.Forms.Button();
-            this.lvRetweet = new System.Windows.Forms.ListView();
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnStressTest = new System.Windows.Forms.Button();
-            this.tbTimelineTestUserScreenName = new System.Windows.Forms.TextBox();
-            this.btnTimelineTest = new System.Windows.Forms.Button();
+            this.tableLayoutPanel_CollectTest = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_CollectTest_1 = new System.Windows.Forms.TableLayoutPanel();
             this.lvTimelineTest = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnStressTest = new System.Windows.Forms.Button();
+            this.tbTimelineTestUserScreenName = new System.Windows.Forms.TextBox();
+            this.btnTimelineTest = new System.Windows.Forms.Button();
+            this.tableLayoutPanel_CollectTest_2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lvRetweet = new System.Windows.Forms.ListView();
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnRetweetTest = new System.Windows.Forms.Button();
+            this.tbRetweetTestTweetId = new System.Windows.Forms.TextBox();
             this.tabQueue = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbQueueType = new System.Windows.Forms.TextBox();
-            this.btnQueueAdd = new System.Windows.Forms.Button();
-            this.tbQueueId = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel_Queue = new System.Windows.Forms.TableLayoutPanel();
             this.lvQueue = new System.Windows.Forms.ListView();
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStripLvQueue = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnQueueAdd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbQueueId = new System.Windows.Forms.TextBox();
+            this.tbQueueType = new System.Windows.Forms.TextBox();
             this.tabStatus = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel_Status = new System.Windows.Forms.TableLayoutPanel();
             this.lbStatus = new System.Windows.Forms.Label();
             this.tabCollect = new System.Windows.Forms.TabPage();
-            this.btnCollectTest = new System.Windows.Forms.Button();
-            this.checkCollectLogAutoScroll = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel_Collect = new System.Windows.Forms.TableLayoutPanel();
             this.lvCollectLog = new System.Windows.Forms.ListView();
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCollectStart = new System.Windows.Forms.Button();
+            this.checkCollectLogAutoScroll = new System.Windows.Forms.CheckBox();
+            this.btnCollectTest = new System.Windows.Forms.Button();
             this.timerStatus = new System.Windows.Forms.Timer(this.components);
-            this.tableLayoutPanel_CollectTest = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_CollectTest_1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_CollectTest_2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_Queue = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_Status = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_Collect = new System.Windows.Forms.TableLayoutPanel();
+            this.checkCollectLog = new System.Windows.Forms.CheckBox();
             this.groupBox_DBConnection.SuspendLayout();
             this.tableLayoutPanel_DBConnection_1.SuspendLayout();
             this.groupBox_APIToken.SuspendLayout();
@@ -112,15 +113,15 @@
             this.tabApiToken.SuspendLayout();
             this.tabCollectTest.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tabQueue.SuspendLayout();
-            this.contextMenuStripLvQueue.SuspendLayout();
-            this.tabStatus.SuspendLayout();
-            this.tabCollect.SuspendLayout();
             this.tableLayoutPanel_CollectTest.SuspendLayout();
             this.tableLayoutPanel_CollectTest_1.SuspendLayout();
             this.tableLayoutPanel_CollectTest_2.SuspendLayout();
+            this.tabQueue.SuspendLayout();
             this.tableLayoutPanel_Queue.SuspendLayout();
+            this.contextMenuStripLvQueue.SuspendLayout();
+            this.tabStatus.SuspendLayout();
             this.tableLayoutPanel_Status.SuspendLayout();
+            this.tabCollect.SuspendLayout();
             this.tableLayoutPanel_Collect.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -440,95 +441,39 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Timeline ";
             // 
-            // tbRetweetTestTweetId
+            // tableLayoutPanel_CollectTest
             // 
-            this.tbRetweetTestTweetId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbRetweetTestTweetId.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbRetweetTestTweetId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbRetweetTestTweetId.Location = new System.Drawing.Point(206, 318);
-            this.tbRetweetTestTweetId.Name = "tbRetweetTestTweetId";
-            this.tbRetweetTestTweetId.Size = new System.Drawing.Size(206, 23);
-            this.tbRetweetTestTweetId.TabIndex = 8;
-            this.tbRetweetTestTweetId.Text = global::xTwitter_collector.Properties.Settings.Default.tbRetweetTestTweetId;
+            this.tableLayoutPanel_CollectTest.ColumnCount = 1;
+            this.tableLayoutPanel_CollectTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_CollectTest.Controls.Add(this.tableLayoutPanel_CollectTest_1, 0, 0);
+            this.tableLayoutPanel_CollectTest.Controls.Add(this.tableLayoutPanel_CollectTest_2, 0, 1);
+            this.tableLayoutPanel_CollectTest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_CollectTest.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanel_CollectTest.Name = "tableLayoutPanel_CollectTest";
+            this.tableLayoutPanel_CollectTest.RowCount = 2;
+            this.tableLayoutPanel_CollectTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_CollectTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_CollectTest.Size = new System.Drawing.Size(1244, 705);
+            this.tableLayoutPanel_CollectTest.TabIndex = 9;
             // 
-            // btnRetweetTest
+            // tableLayoutPanel_CollectTest_1
             // 
-            this.btnRetweetTest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRetweetTest.Location = new System.Drawing.Point(857, 318);
-            this.btnRetweetTest.Name = "btnRetweetTest";
-            this.btnRetweetTest.Size = new System.Drawing.Size(143, 23);
-            this.btnRetweetTest.TabIndex = 7;
-            this.btnRetweetTest.Text = "Get Retweet (Forcely)";
-            this.btnRetweetTest.UseVisualStyleBackColor = true;
-            this.btnRetweetTest.Click += new System.EventHandler(this.btnRetweetTest_Click);
-            // 
-            // lvRetweet
-            // 
-            this.lvRetweet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15});
-            this.tableLayoutPanel_CollectTest_2.SetColumnSpan(this.lvRetweet, 2);
-            this.lvRetweet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvRetweet.FullRowSelect = true;
-            this.lvRetweet.GridLines = true;
-            this.lvRetweet.Location = new System.Drawing.Point(3, 3);
-            this.lvRetweet.Name = "lvRetweet";
-            this.lvRetweet.Size = new System.Drawing.Size(1232, 306);
-            this.lvRetweet.TabIndex = 6;
-            this.lvRetweet.UseCompatibleStateImageBehavior = false;
-            this.lvRetweet.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "ID";
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Text";
-            this.columnHeader13.Width = 276;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Retweet Count";
-            this.columnHeader14.Width = 63;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Favorite Count";
-            this.columnHeader15.Width = 72;
-            // 
-            // btnStressTest
-            // 
-            this.btnStressTest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStressTest.Location = new System.Drawing.Point(989, 317);
-            this.btnStressTest.Name = "btnStressTest";
-            this.btnStressTest.Size = new System.Drawing.Size(187, 23);
-            this.btnStressTest.TabIndex = 5;
-            this.btnStressTest.Text = "Stress Test (DO NOT CLICK ME)";
-            this.btnStressTest.UseVisualStyleBackColor = true;
-            this.btnStressTest.Click += new System.EventHandler(this.btnStressTest_Click);
-            // 
-            // tbTimelineTestUserScreenName
-            // 
-            this.tbTimelineTestUserScreenName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbTimelineTestUserScreenName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbTimelineTestUserScreenName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbTimelineTestUserScreenName.Location = new System.Drawing.Point(206, 317);
-            this.tbTimelineTestUserScreenName.Name = "tbTimelineTestUserScreenName";
-            this.tbTimelineTestUserScreenName.Size = new System.Drawing.Size(206, 23);
-            this.tbTimelineTestUserScreenName.TabIndex = 4;
-            this.tbTimelineTestUserScreenName.Text = global::xTwitter_collector.Properties.Settings.Default.tbTimelineTestUserScreenName;
-            // 
-            // btnTimelineTest
-            // 
-            this.btnTimelineTest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTimelineTest.Location = new System.Drawing.Point(736, 317);
-            this.btnTimelineTest.Name = "btnTimelineTest";
-            this.btnTimelineTest.Size = new System.Drawing.Size(75, 23);
-            this.btnTimelineTest.TabIndex = 2;
-            this.btnTimelineTest.Text = "Refresh";
-            this.btnTimelineTest.UseVisualStyleBackColor = true;
-            this.btnTimelineTest.Click += new System.EventHandler(this.btnTimelineTest_Click);
+            this.tableLayoutPanel_CollectTest_1.ColumnCount = 3;
+            this.tableLayoutPanel_CollectTest_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_CollectTest_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_CollectTest_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_CollectTest_1.Controls.Add(this.lvTimelineTest, 0, 0);
+            this.tableLayoutPanel_CollectTest_1.Controls.Add(this.btnStressTest, 2, 1);
+            this.tableLayoutPanel_CollectTest_1.Controls.Add(this.tbTimelineTestUserScreenName, 0, 1);
+            this.tableLayoutPanel_CollectTest_1.Controls.Add(this.btnTimelineTest, 1, 1);
+            this.tableLayoutPanel_CollectTest_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_CollectTest_1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel_CollectTest_1.Name = "tableLayoutPanel_CollectTest_1";
+            this.tableLayoutPanel_CollectTest_1.RowCount = 2;
+            this.tableLayoutPanel_CollectTest_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel_CollectTest_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel_CollectTest_1.Size = new System.Drawing.Size(1238, 346);
+            this.tableLayoutPanel_CollectTest_1.TabIndex = 0;
             // 
             // lvTimelineTest
             // 
@@ -567,6 +512,113 @@
             this.columnHeader8.Text = "Favorite Count";
             this.columnHeader8.Width = 72;
             // 
+            // btnStressTest
+            // 
+            this.btnStressTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnStressTest.Location = new System.Drawing.Point(989, 317);
+            this.btnStressTest.Name = "btnStressTest";
+            this.btnStressTest.Size = new System.Drawing.Size(187, 23);
+            this.btnStressTest.TabIndex = 5;
+            this.btnStressTest.Text = "Stress Test (DO NOT CLICK ME)";
+            this.btnStressTest.UseVisualStyleBackColor = true;
+            this.btnStressTest.Click += new System.EventHandler(this.btnStressTest_Click);
+            // 
+            // tbTimelineTestUserScreenName
+            // 
+            this.tbTimelineTestUserScreenName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTimelineTestUserScreenName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbTimelineTestUserScreenName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbTimelineTestUserScreenName.Location = new System.Drawing.Point(206, 317);
+            this.tbTimelineTestUserScreenName.Name = "tbTimelineTestUserScreenName";
+            this.tbTimelineTestUserScreenName.Size = new System.Drawing.Size(206, 23);
+            this.tbTimelineTestUserScreenName.TabIndex = 4;
+            this.tbTimelineTestUserScreenName.Text = global::xTwitter_collector.Properties.Settings.Default.tbTimelineTestUserScreenName;
+            // 
+            // btnTimelineTest
+            // 
+            this.btnTimelineTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnTimelineTest.Location = new System.Drawing.Point(736, 317);
+            this.btnTimelineTest.Name = "btnTimelineTest";
+            this.btnTimelineTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTimelineTest.TabIndex = 2;
+            this.btnTimelineTest.Text = "Refresh";
+            this.btnTimelineTest.UseVisualStyleBackColor = true;
+            this.btnTimelineTest.Click += new System.EventHandler(this.btnTimelineTest_Click);
+            // 
+            // tableLayoutPanel_CollectTest_2
+            // 
+            this.tableLayoutPanel_CollectTest_2.ColumnCount = 2;
+            this.tableLayoutPanel_CollectTest_2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_CollectTest_2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_CollectTest_2.Controls.Add(this.lvRetweet, 0, 0);
+            this.tableLayoutPanel_CollectTest_2.Controls.Add(this.btnRetweetTest, 1, 1);
+            this.tableLayoutPanel_CollectTest_2.Controls.Add(this.tbRetweetTestTweetId, 0, 1);
+            this.tableLayoutPanel_CollectTest_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_CollectTest_2.Location = new System.Drawing.Point(3, 355);
+            this.tableLayoutPanel_CollectTest_2.Name = "tableLayoutPanel_CollectTest_2";
+            this.tableLayoutPanel_CollectTest_2.RowCount = 2;
+            this.tableLayoutPanel_CollectTest_2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel_CollectTest_2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel_CollectTest_2.Size = new System.Drawing.Size(1238, 347);
+            this.tableLayoutPanel_CollectTest_2.TabIndex = 1;
+            // 
+            // lvRetweet
+            // 
+            this.lvRetweet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15});
+            this.tableLayoutPanel_CollectTest_2.SetColumnSpan(this.lvRetweet, 2);
+            this.lvRetweet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvRetweet.FullRowSelect = true;
+            this.lvRetweet.GridLines = true;
+            this.lvRetweet.Location = new System.Drawing.Point(3, 3);
+            this.lvRetweet.Name = "lvRetweet";
+            this.lvRetweet.Size = new System.Drawing.Size(1232, 306);
+            this.lvRetweet.TabIndex = 6;
+            this.lvRetweet.UseCompatibleStateImageBehavior = false;
+            this.lvRetweet.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "ID";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Text";
+            this.columnHeader13.Width = 276;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Retweet Count";
+            this.columnHeader14.Width = 63;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Favorite Count";
+            this.columnHeader15.Width = 72;
+            // 
+            // btnRetweetTest
+            // 
+            this.btnRetweetTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRetweetTest.Location = new System.Drawing.Point(857, 318);
+            this.btnRetweetTest.Name = "btnRetweetTest";
+            this.btnRetweetTest.Size = new System.Drawing.Size(143, 23);
+            this.btnRetweetTest.TabIndex = 7;
+            this.btnRetweetTest.Text = "Get Retweet (Forcely)";
+            this.btnRetweetTest.UseVisualStyleBackColor = true;
+            this.btnRetweetTest.Click += new System.EventHandler(this.btnRetweetTest_Click);
+            // 
+            // tbRetweetTestTweetId
+            // 
+            this.tbRetweetTestTweetId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbRetweetTestTweetId.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::xTwitter_collector.Properties.Settings.Default, "tbRetweetTestTweetId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbRetweetTestTweetId.Location = new System.Drawing.Point(206, 318);
+            this.tbRetweetTestTweetId.Name = "tbRetweetTestTweetId";
+            this.tbRetweetTestTweetId.Size = new System.Drawing.Size(206, 23);
+            this.tbRetweetTestTweetId.TabIndex = 8;
+            this.tbRetweetTestTweetId.Text = global::xTwitter_collector.Properties.Settings.Default.tbRetweetTestTweetId;
+            // 
             // tabQueue
             // 
             this.tabQueue.Controls.Add(this.tableLayoutPanel_Queue);
@@ -577,42 +629,26 @@
             this.tabQueue.Text = "Queue";
             this.tabQueue.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // tableLayoutPanel_Queue
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(818, 681);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 30);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "0 - User\r\n1 - Tweet";
-            // 
-            // tbQueueType
-            // 
-            this.tbQueueType.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbQueueType.Location = new System.Drawing.Point(444, 684);
-            this.tbQueueType.Name = "tbQueueType";
-            this.tbQueueType.Size = new System.Drawing.Size(178, 23);
-            this.tbQueueType.TabIndex = 3;
-            // 
-            // btnQueueAdd
-            // 
-            this.btnQueueAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnQueueAdd.Location = new System.Drawing.Point(1092, 684);
-            this.btnQueueAdd.Name = "btnQueueAdd";
-            this.btnQueueAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnQueueAdd.TabIndex = 2;
-            this.btnQueueAdd.Text = "Add";
-            this.btnQueueAdd.UseVisualStyleBackColor = true;
-            this.btnQueueAdd.Click += new System.EventHandler(this.btnQueueAdd_Click);
-            // 
-            // tbQueueId
-            // 
-            this.tbQueueId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbQueueId.Location = new System.Drawing.Point(3, 684);
-            this.tbQueueId.Name = "tbQueueId";
-            this.tbQueueId.Size = new System.Drawing.Size(370, 23);
-            this.tbQueueId.TabIndex = 1;
+            this.tableLayoutPanel_Queue.ColumnCount = 4;
+            this.tableLayoutPanel_Queue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel_Queue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_Queue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_Queue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel_Queue.Controls.Add(this.lvQueue, 0, 0);
+            this.tableLayoutPanel_Queue.Controls.Add(this.btnQueueAdd, 3, 1);
+            this.tableLayoutPanel_Queue.Controls.Add(this.label1, 2, 1);
+            this.tableLayoutPanel_Queue.Controls.Add(this.tbQueueId, 0, 1);
+            this.tableLayoutPanel_Queue.Controls.Add(this.tbQueueType, 1, 1);
+            this.tableLayoutPanel_Queue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_Queue.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel_Queue.Name = "tableLayoutPanel_Queue";
+            this.tableLayoutPanel_Queue.RowCount = 2;
+            this.tableLayoutPanel_Queue.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel_Queue.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel_Queue.Size = new System.Drawing.Size(1256, 733);
+            this.tableLayoutPanel_Queue.TabIndex = 0;
             // 
             // lvQueue
             // 
@@ -664,6 +700,43 @@
             this.toolStripMenuItem2.Text = "삭제(&D)";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
+            // btnQueueAdd
+            // 
+            this.btnQueueAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnQueueAdd.Location = new System.Drawing.Point(1092, 684);
+            this.btnQueueAdd.Name = "btnQueueAdd";
+            this.btnQueueAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnQueueAdd.TabIndex = 2;
+            this.btnQueueAdd.Text = "Add";
+            this.btnQueueAdd.UseVisualStyleBackColor = true;
+            this.btnQueueAdd.Click += new System.EventHandler(this.btnQueueAdd_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(818, 681);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 30);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "0 - User\r\n1 - Tweet";
+            // 
+            // tbQueueId
+            // 
+            this.tbQueueId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbQueueId.Location = new System.Drawing.Point(3, 684);
+            this.tbQueueId.Name = "tbQueueId";
+            this.tbQueueId.Size = new System.Drawing.Size(370, 23);
+            this.tbQueueId.TabIndex = 1;
+            // 
+            // tbQueueType
+            // 
+            this.tbQueueType.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbQueueType.Location = new System.Drawing.Point(444, 684);
+            this.tbQueueType.Name = "tbQueueType";
+            this.tbQueueType.Size = new System.Drawing.Size(178, 23);
+            this.tbQueueType.TabIndex = 3;
+            // 
             // tabStatus
             // 
             this.tabStatus.Controls.Add(this.tableLayoutPanel_Status);
@@ -673,6 +746,19 @@
             this.tabStatus.TabIndex = 4;
             this.tabStatus.Text = "Status";
             this.tabStatus.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel_Status
+            // 
+            this.tableLayoutPanel_Status.ColumnCount = 1;
+            this.tableLayoutPanel_Status.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_Status.Controls.Add(this.lbStatus, 0, 0);
+            this.tableLayoutPanel_Status.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_Status.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel_Status.Name = "tableLayoutPanel_Status";
+            this.tableLayoutPanel_Status.RowCount = 1;
+            this.tableLayoutPanel_Status.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_Status.Size = new System.Drawing.Size(1256, 733);
+            this.tableLayoutPanel_Status.TabIndex = 1;
             // 
             // lbStatus
             // 
@@ -695,28 +781,26 @@
             this.tabCollect.Text = "Collect";
             this.tabCollect.UseVisualStyleBackColor = true;
             // 
-            // btnCollectTest
+            // tableLayoutPanel_Collect
             // 
-            this.btnCollectTest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCollectTest.Location = new System.Drawing.Point(170, 679);
-            this.btnCollectTest.Name = "btnCollectTest";
-            this.btnCollectTest.Size = new System.Drawing.Size(75, 23);
-            this.btnCollectTest.TabIndex = 3;
-            this.btnCollectTest.Text = "enum Test";
-            this.btnCollectTest.UseVisualStyleBackColor = true;
-            // 
-            // checkCollectLogAutoScroll
-            // 
-            this.checkCollectLogAutoScroll.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkCollectLogAutoScroll.AutoSize = true;
-            this.checkCollectLogAutoScroll.Checked = global::xTwitter_collector.Properties.Settings.Default.checkCollectLogAutoScroll;
-            this.checkCollectLogAutoScroll.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xTwitter_collector.Properties.Settings.Default, "checkCollectLogAutoScroll", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkCollectLogAutoScroll.Location = new System.Drawing.Point(581, 681);
-            this.checkCollectLogAutoScroll.Name = "checkCollectLogAutoScroll";
-            this.checkCollectLogAutoScroll.Size = new System.Drawing.Size(86, 19);
-            this.checkCollectLogAutoScroll.TabIndex = 2;
-            this.checkCollectLogAutoScroll.Text = "Auto Scroll";
-            this.checkCollectLogAutoScroll.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel_Collect.ColumnCount = 3;
+            this.tableLayoutPanel_Collect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel_Collect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel_Collect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel_Collect.Controls.Add(this.lvCollectLog, 0, 0);
+            this.tableLayoutPanel_Collect.Controls.Add(this.btnCollectStart, 2, 1);
+            this.tableLayoutPanel_Collect.Controls.Add(this.checkCollectLogAutoScroll, 1, 1);
+            this.tableLayoutPanel_Collect.Controls.Add(this.btnCollectTest, 0, 1);
+            this.tableLayoutPanel_Collect.Controls.Add(this.checkCollectLog, 1, 2);
+            this.tableLayoutPanel_Collect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_Collect.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel_Collect.Name = "tableLayoutPanel_Collect";
+            this.tableLayoutPanel_Collect.RowCount = 3;
+            this.tableLayoutPanel_Collect.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel_Collect.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel_Collect.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel_Collect.Size = new System.Drawing.Size(1250, 727);
+            this.tableLayoutPanel_Collect.TabIndex = 4;
             // 
             // lvCollectLog
             // 
@@ -729,7 +813,7 @@
             this.lvCollectLog.GridLines = true;
             this.lvCollectLog.Location = new System.Drawing.Point(3, 3);
             this.lvCollectLog.Name = "lvCollectLog";
-            this.lvCollectLog.Size = new System.Drawing.Size(1244, 648);
+            this.lvCollectLog.Size = new System.Drawing.Size(1244, 595);
             this.lvCollectLog.TabIndex = 1;
             this.lvCollectLog.UseCompatibleStateImageBehavior = false;
             this.lvCollectLog.View = System.Windows.Forms.View.Details;
@@ -747,7 +831,7 @@
             // btnCollectStart
             // 
             this.btnCollectStart.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCollectStart.Location = new System.Drawing.Point(1003, 679);
+            this.btnCollectStart.Location = new System.Drawing.Point(1003, 622);
             this.btnCollectStart.Name = "btnCollectStart";
             this.btnCollectStart.Size = new System.Drawing.Size(75, 23);
             this.btnCollectStart.TabIndex = 0;
@@ -755,114 +839,46 @@
             this.btnCollectStart.UseVisualStyleBackColor = true;
             this.btnCollectStart.Click += new System.EventHandler(this.btnCollectStart_Click);
             // 
+            // checkCollectLogAutoScroll
+            // 
+            this.checkCollectLogAutoScroll.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkCollectLogAutoScroll.AutoSize = true;
+            this.checkCollectLogAutoScroll.Checked = global::xTwitter_collector.Properties.Settings.Default.checkCollectLogAutoScroll;
+            this.checkCollectLogAutoScroll.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xTwitter_collector.Properties.Settings.Default, "checkCollectLogAutoScroll", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkCollectLogAutoScroll.Location = new System.Drawing.Point(581, 624);
+            this.checkCollectLogAutoScroll.Name = "checkCollectLogAutoScroll";
+            this.checkCollectLogAutoScroll.Size = new System.Drawing.Size(86, 19);
+            this.checkCollectLogAutoScroll.TabIndex = 2;
+            this.checkCollectLogAutoScroll.Text = "Auto Scroll";
+            this.checkCollectLogAutoScroll.UseVisualStyleBackColor = true;
+            // 
+            // btnCollectTest
+            // 
+            this.btnCollectTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCollectTest.Location = new System.Drawing.Point(170, 622);
+            this.btnCollectTest.Name = "btnCollectTest";
+            this.btnCollectTest.Size = new System.Drawing.Size(75, 23);
+            this.btnCollectTest.TabIndex = 3;
+            this.btnCollectTest.Text = "enum Test";
+            this.btnCollectTest.UseVisualStyleBackColor = true;
+            // 
             // timerStatus
             // 
             this.timerStatus.Interval = 1000;
             this.timerStatus.Tick += new System.EventHandler(this.timerStatus_Tick);
             // 
-            // tableLayoutPanel_CollectTest
+            // checkCollectLog
             // 
-            this.tableLayoutPanel_CollectTest.ColumnCount = 1;
-            this.tableLayoutPanel_CollectTest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_CollectTest.Controls.Add(this.tableLayoutPanel_CollectTest_1, 0, 0);
-            this.tableLayoutPanel_CollectTest.Controls.Add(this.tableLayoutPanel_CollectTest_2, 0, 1);
-            this.tableLayoutPanel_CollectTest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_CollectTest.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel_CollectTest.Name = "tableLayoutPanel_CollectTest";
-            this.tableLayoutPanel_CollectTest.RowCount = 2;
-            this.tableLayoutPanel_CollectTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_CollectTest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_CollectTest.Size = new System.Drawing.Size(1244, 705);
-            this.tableLayoutPanel_CollectTest.TabIndex = 9;
-            // 
-            // tableLayoutPanel_CollectTest_1
-            // 
-            this.tableLayoutPanel_CollectTest_1.ColumnCount = 3;
-            this.tableLayoutPanel_CollectTest_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_CollectTest_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_CollectTest_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_CollectTest_1.Controls.Add(this.lvTimelineTest, 0, 0);
-            this.tableLayoutPanel_CollectTest_1.Controls.Add(this.btnStressTest, 2, 1);
-            this.tableLayoutPanel_CollectTest_1.Controls.Add(this.tbTimelineTestUserScreenName, 0, 1);
-            this.tableLayoutPanel_CollectTest_1.Controls.Add(this.btnTimelineTest, 1, 1);
-            this.tableLayoutPanel_CollectTest_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_CollectTest_1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel_CollectTest_1.Name = "tableLayoutPanel_CollectTest_1";
-            this.tableLayoutPanel_CollectTest_1.RowCount = 2;
-            this.tableLayoutPanel_CollectTest_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel_CollectTest_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel_CollectTest_1.Size = new System.Drawing.Size(1238, 346);
-            this.tableLayoutPanel_CollectTest_1.TabIndex = 0;
-            // 
-            // tableLayoutPanel_CollectTest_2
-            // 
-            this.tableLayoutPanel_CollectTest_2.ColumnCount = 2;
-            this.tableLayoutPanel_CollectTest_2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_CollectTest_2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_CollectTest_2.Controls.Add(this.lvRetweet, 0, 0);
-            this.tableLayoutPanel_CollectTest_2.Controls.Add(this.btnRetweetTest, 1, 1);
-            this.tableLayoutPanel_CollectTest_2.Controls.Add(this.tbRetweetTestTweetId, 0, 1);
-            this.tableLayoutPanel_CollectTest_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_CollectTest_2.Location = new System.Drawing.Point(3, 355);
-            this.tableLayoutPanel_CollectTest_2.Name = "tableLayoutPanel_CollectTest_2";
-            this.tableLayoutPanel_CollectTest_2.RowCount = 2;
-            this.tableLayoutPanel_CollectTest_2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel_CollectTest_2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel_CollectTest_2.Size = new System.Drawing.Size(1238, 347);
-            this.tableLayoutPanel_CollectTest_2.TabIndex = 1;
-            // 
-            // tableLayoutPanel_Queue
-            // 
-            this.tableLayoutPanel_Queue.ColumnCount = 4;
-            this.tableLayoutPanel_Queue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel_Queue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_Queue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_Queue.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel_Queue.Controls.Add(this.lvQueue, 0, 0);
-            this.tableLayoutPanel_Queue.Controls.Add(this.btnQueueAdd, 3, 1);
-            this.tableLayoutPanel_Queue.Controls.Add(this.label1, 2, 1);
-            this.tableLayoutPanel_Queue.Controls.Add(this.tbQueueId, 0, 1);
-            this.tableLayoutPanel_Queue.Controls.Add(this.tbQueueType, 1, 1);
-            this.tableLayoutPanel_Queue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_Queue.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel_Queue.Name = "tableLayoutPanel_Queue";
-            this.tableLayoutPanel_Queue.RowCount = 2;
-            this.tableLayoutPanel_Queue.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel_Queue.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel_Queue.Size = new System.Drawing.Size(1256, 733);
-            this.tableLayoutPanel_Queue.TabIndex = 0;
-            // 
-            // tableLayoutPanel_Status
-            // 
-            this.tableLayoutPanel_Status.ColumnCount = 1;
-            this.tableLayoutPanel_Status.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_Status.Controls.Add(this.lbStatus, 0, 0);
-            this.tableLayoutPanel_Status.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_Status.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel_Status.Name = "tableLayoutPanel_Status";
-            this.tableLayoutPanel_Status.RowCount = 1;
-            this.tableLayoutPanel_Status.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_Status.Size = new System.Drawing.Size(1256, 733);
-            this.tableLayoutPanel_Status.TabIndex = 1;
-            // 
-            // tableLayoutPanel_Collect
-            // 
-            this.tableLayoutPanel_Collect.ColumnCount = 3;
-            this.tableLayoutPanel_Collect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel_Collect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel_Collect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel_Collect.Controls.Add(this.lvCollectLog, 0, 0);
-            this.tableLayoutPanel_Collect.Controls.Add(this.btnCollectStart, 2, 1);
-            this.tableLayoutPanel_Collect.Controls.Add(this.checkCollectLogAutoScroll, 1, 1);
-            this.tableLayoutPanel_Collect.Controls.Add(this.btnCollectTest, 0, 1);
-            this.tableLayoutPanel_Collect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_Collect.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel_Collect.Name = "tableLayoutPanel_Collect";
-            this.tableLayoutPanel_Collect.RowCount = 2;
-            this.tableLayoutPanel_Collect.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel_Collect.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel_Collect.Size = new System.Drawing.Size(1250, 727);
-            this.tableLayoutPanel_Collect.TabIndex = 4;
+            this.checkCollectLog.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkCollectLog.AutoSize = true;
+            this.checkCollectLog.Checked = global::xTwitter_collector.Properties.Settings.Default.checkCollectLogAutoScroll;
+            this.checkCollectLog.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xTwitter_collector.Properties.Settings.Default, "checkCollectLogAutoScroll", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkCollectLog.Location = new System.Drawing.Point(574, 687);
+            this.checkCollectLog.Name = "checkCollectLog";
+            this.checkCollectLog.Size = new System.Drawing.Size(99, 19);
+            this.checkCollectLog.TabIndex = 4;
+            this.checkCollectLog.Text = "Logging Stop";
+            this.checkCollectLog.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -889,19 +905,19 @@
             this.tabApiToken.ResumeLayout(false);
             this.tabCollectTest.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.tabQueue.ResumeLayout(false);
-            this.contextMenuStripLvQueue.ResumeLayout(false);
-            this.tabStatus.ResumeLayout(false);
-            this.tabCollect.ResumeLayout(false);
             this.tableLayoutPanel_CollectTest.ResumeLayout(false);
             this.tableLayoutPanel_CollectTest_1.ResumeLayout(false);
             this.tableLayoutPanel_CollectTest_1.PerformLayout();
             this.tableLayoutPanel_CollectTest_2.ResumeLayout(false);
             this.tableLayoutPanel_CollectTest_2.PerformLayout();
+            this.tabQueue.ResumeLayout(false);
             this.tableLayoutPanel_Queue.ResumeLayout(false);
             this.tableLayoutPanel_Queue.PerformLayout();
+            this.contextMenuStripLvQueue.ResumeLayout(false);
+            this.tabStatus.ResumeLayout(false);
             this.tableLayoutPanel_Status.ResumeLayout(false);
             this.tableLayoutPanel_Status.PerformLayout();
+            this.tabCollect.ResumeLayout(false);
             this.tableLayoutPanel_Collect.ResumeLayout(false);
             this.tableLayoutPanel_Collect.PerformLayout();
             this.ResumeLayout(false);
@@ -982,6 +998,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Queue;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Status;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Collect;
+        private System.Windows.Forms.CheckBox checkCollectLog;
     }
 }
 
