@@ -649,9 +649,9 @@ namespace xTwitter_collector
                 {
                     lvCollectLog.Items.RemoveAt(0);
                 }
-                // 로그 blocking 되지 않도록
-                Application.DoEvents();
             }
+            // 로그 blocking 되지 않도록
+            Application.DoEvents();
             // 파일에다가도써야지
             using (StreamWriter sw = File.AppendText("log.txt"))
             {
@@ -725,6 +725,11 @@ namespace xTwitter_collector
                 kd.db.TaskQueue.Remove(kd.db.TaskQueue.ToArray()[idx]);
                 kd.db.SaveChanges();
             }
+        }
+
+        private void btnCollectLogClear_Click(object sender, EventArgs e)
+        {
+            lvCollectLog.Items.Clear();
         }
     }
 }
