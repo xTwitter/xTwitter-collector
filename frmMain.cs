@@ -618,6 +618,12 @@ namespace xTwitter_collector
                 {
                     CollectLog(ex.Message);
                     CollectLog(ex.StackTrace);
+                    // 다음 큐로 이동
+                    // 작업 queue에 문제있던가 해서.. 그냥 다음 큐로 넘어가야한다
+                    TaskQueue q = kd.db.TaskQueue.ToArray().First();
+                    CollectLog($"q에 문제있는 듯하다. q.id : {q.id} q.type : {Enum.GetName(typeof(QueueType), q.type)}");
+                    kd.db.TaskQueue.Remove(q);
+                    kd.db.SaveChanges();
                 }
             }
 
